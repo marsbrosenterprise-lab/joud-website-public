@@ -1,9 +1,9 @@
 # JOUD — Dates & Dry Fruits — Website Package (v2)
 
 ## What's in this folder
-- **joud-website.html** — the complete, ready-to-host website. Single self-contained file, all images embedded, no build step needed to use it.
+- **index.html** — the complete, ready-to-host website. Single self-contained file, all images embedded, no build step needed to use it.
 - **source/joud-template.html** — the same site, but human-readable: images are `__TOKEN__` placeholders instead of huge base64 blobs. Edit this if you (or a developer) need to change text, layout, or styling.
-- **source/build.py** — run this after editing the template to bake the images back in and regenerate `joud-website.html`. Usage:
+- **source/build.py** — run this after editing the template to bake the images back in and regenerate `index.html`. Usage:
   ```
   cd source/
   python3 build.py
@@ -15,7 +15,7 @@
 https://claude.ai/artifact/PaxYTcj7JwZR7j4iBKGs1h — always reflects the latest version I publish.
 
 ## How to host it permanently
-`joud-website.html` is a plain static file — rename to `index.html` and upload to any static host (Netlify, Vercel, GitHub Pages, Hostinger, GoDaddy, etc.), or hand it to whoever manages your domain.
+`index.html` is a plain static file — upload it to any static host (Netlify, Vercel, GitHub Pages, Hostinger, GoDaddy, etc.), or hand it to whoever manages your domain.
 
 ## Image manifest
 

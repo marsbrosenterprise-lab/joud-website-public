@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Rebuilds joud-website.html from the editable source template.
+Rebuilds index.html from the editable source template.
 
 Why this exists: the final HTML has every image embedded as base64 text,
 which makes it a single portable file (easy to host anywhere) but painful
@@ -13,7 +13,7 @@ Usage:
     python3 build.py
 
 Output:
-    ../joud-website.html  (overwritten)
+    ../index.html  (overwritten)
 """
 import base64
 import os
@@ -21,7 +21,7 @@ import os
 SOURCE_DIR = os.path.dirname(os.path.abspath(__file__))
 IMAGES_DIR = os.path.join(SOURCE_DIR, "..", "images")
 TEMPLATE = os.path.join(SOURCE_DIR, "joud-template.html")
-OUTPUT = os.path.join(SOURCE_DIR, "..", "joud-website.html")
+OUTPUT = os.path.join(SOURCE_DIR, "..", "index.html")
 
 # Maps each __TOKEN__ in the template to an image file in /images
 IMAGE_MAP = {
