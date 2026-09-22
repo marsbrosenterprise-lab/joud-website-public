@@ -2,6 +2,7 @@
 
 ## What's in this folder
 - **index.html** — the complete, ready-to-host website. Single self-contained file, all images embedded, no build step needed to use it.
+- **dates.html** — the dedicated premium dates collection with variety cards, filters, product quick views, and WhatsApp enquiries.
 - **source/joud-template.html** — the same site, but human-readable: images are `__TOKEN__` placeholders instead of huge base64 blobs. Edit this if you (or a developer) need to change text, layout, or styling.
 - **source/build.py** — run this after editing the template to bake the images back in and regenerate `index.html`. Usage:
   ```
