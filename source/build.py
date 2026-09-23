@@ -2,11 +2,9 @@
 """
 Rebuilds index.html from the editable source template.
 
-Why this exists: the final HTML has every image embedded as base64 text,
-which makes it a single portable file (easy to host anywhere) but painful
-to hand-edit. This script keeps the template human-readable — edit text,
-layout, or CSS in joud-template.html, then run this script to produce the
-final, ready-to-host file with all images baked back in.
+The homepage keeps images as normal files under /images instead of embedding
+them as Base64. This keeps the HTML small, lets browsers cache each asset,
+and makes the page faster to update and deliver on mobile connections.
 
 Usage:
     cd source/
@@ -15,50 +13,36 @@ Usage:
 Output:
     ../index.html  (overwritten)
 """
-import base64
 import os
+import shutil
 
 SOURCE_DIR = os.path.dirname(os.path.abspath(__file__))
 IMAGES_DIR = os.path.join(SOURCE_DIR, "..", "images")
 TEMPLATE = os.path.join(SOURCE_DIR, "joud-template.html")
 OUTPUT = os.path.join(SOURCE_DIR, "..", "index.html")
 
-# Maps each __TOKEN__ in the template to an image file in /images
-IMAGE_MAP = {
-    "__LOGO_B64__": "logo_icon.png",
-    "__WORDMARK_B64__": "logo_wordmark.png",
-    "__HERO_DATES__": "hero_dates.jpg",
-    "__HERO_ALMOND__": "hero_almond.jpg",
-    "__HERO_WALNUT__": "hero_walnut.jpg",
-    "__HERO_GIFT__": "hero_gift.jpg",
-    "__ABOUT_IMG__": "about_img.jpg",
-    "__GIFT_CTA_IMG__": "gift_cta_img.jpg",
-    "__CAT_DATES__": "cat_dates.jpg",
-    "__CAT_STUFFED__": "cat_stuffed.jpg",
-    "__CAT_CHOC__": "cat_choc.jpg",
-    "__CAT_MAMOOL__": "cat_mamool.jpg",
-    "__CAT_COFFEE__": "cat_coffee.jpg",
-    "__CAT_DRYFRUITS__": "cat_dryfruits.jpg",
-    "__CAT_SIGNATURE__": "cat_signature.jpg",
-    "__CAT_GIFTING__": "cat_gifting.jpg",
-}
+IMAGE_FILES = (
+    "logo_icon.png", "logo_wordmark.png", "hero_dates.jpg", "hero_almond.jpg",
+    "hero_walnut.jpg", "hero_gift.jpg", "about_img.jpg", "gift_cta_img.jpg",
+    "cat_dates.jpg", "cat_stuffed.jpg", "cat_choc.jpg", "cat_mamool.jpg",
+    "cat_coffee.jpg", "cat_dryfruits.jpg", "cat_signature.jpg", "cat_gifting.jpg",
+)
 
 def main():
     with open(TEMPLATE, "r", encoding="utf-8") as f:
         html = f.read()
 
-    for token, filename in IMAGE_MAP.items():
+    for filename in IMAGE_FILES:
         path = os.path.join(IMAGES_DIR, filename)
-        with open(path, "rb") as img:
-            b64 = base64.b64encode(img.read()).decode()
-        count = html.count(token)
-        if count == 0:
-            print(f"WARNING: token {token} not found in template")
-        html = html.replace(token, b64)
-        print(f"{filename:20s} -> {token:20s} ({count} occurrence(s), {len(b64)//1024} KB)")
+        if not os.path.exists(path):
+            raise FileNotFoundError(f"Missing image asset: {path}")
 
-    with open(OUTPUT, "w", encoding="utf-8") as f:
-        f.write(html)
+    if "__" in html or "data:image" in html:
+        raise ValueError("Template still contains an image token or embedded data URI")
+
+    print(f"Validated {len(IMAGE_FILES)} external image assets")
+
+    shutil.copyfile(TEMPLATE, OUTPUT)
 
     print(f"\nDone. Wrote {OUTPUT} ({len(html)//1024} KB)")
 

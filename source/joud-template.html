@@ -8,7 +8,7 @@
 <meta property="og:title" content="JOUD — Premium Dates &amp; Dry Fruits">
 <meta property="og:description" content="Carefully selected dates, nuts and dry fruits — natural, premium, and perfect for gifting. From the finest land to your table.">
 <meta property="og:type" content="website">
-<meta property="og:image" content="data:image/jpeg;base64,__HERO_GIFT__">
+<meta property="og:image" content="images/hero_gift.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -36,7 +36,7 @@
     --bg: var(--ivory);
     --bg-soft: var(--ivory-soft);
     --fg: var(--charcoal);
-    --fg-soft: rgba(38,53,45,0.68);
+    --fg-soft: #4D594E;
     --line: var(--line-light);
   }
   html{scroll-padding-top:env(safe-area-inset-top,0px);}
@@ -296,7 +296,7 @@
   .categories{background:var(--charcoal);color:#F2E9D8;}
   .cat-head{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;margin-bottom:48px;flex-wrap:wrap;}
   .cat-head h2{font-size:clamp(1.9rem,3.6vw,2.6rem);max-width:16ch;color:#F8F1E2;}
-  .cat-head p{color:rgba(242,233,216,0.62);max-width:38ch;line-height:1.6;}
+  .cat-head p{color:rgba(242,233,216,0.84);max-width:38ch;line-height:1.6;}
   .cat-grid{
     display:grid;grid-template-columns:repeat(4,1fr);
     grid-auto-rows:clamp(150px,20vw,240px);gap:24px;
@@ -354,7 +354,7 @@
   .why-item .idx{font-family:'Marcellus',serif;color:var(--gold-light);font-size:0.95rem;margin-bottom:16px;display:block;}
   .why-item:nth-child(even) .idx{color:var(--pistachio);}
   .why-item h3{font-size:1.15rem;color:#F8F1E2;margin-bottom:10px;}
-  .why-item p{font-size:0.9rem;color:rgba(243,233,214,0.65);line-height:1.6;}
+  .why-item p{font-size:0.9rem;color:rgba(243,233,214,0.84);line-height:1.6;}
   @media (max-width:900px){
     .why-grid{grid-template-columns:repeat(2,1fr);}
     .why-item{border-left:none;border-top:1px solid var(--line-dark);}
@@ -407,9 +407,9 @@
   .foot-brand{display:flex;align-items:center;gap:10px;margin-bottom:18px;}
   .foot-brand img{height:42px;width:auto;object-fit:contain;}
   .foot-col h4{color:#F8F1E2;font-family:'Marcellus',serif;font-weight:400;font-size:0.98rem;margin-bottom:18px;}
-  .foot-col p, .foot-col a{font-size:0.9rem;line-height:2;display:block;color:rgba(243,233,214,0.68);}
+  .foot-col p, .foot-col a{font-size:0.9rem;line-height:2;display:block;color:rgba(243,233,214,0.84);}
   .foot-col a:hover{color:var(--gold-light);}
-  .foot-desc{font-size:0.92rem;line-height:1.75;max-width:38ch;color:rgba(243,233,214,0.62);margin-bottom:20px;}
+  .foot-desc{font-size:0.92rem;line-height:1.75;max-width:38ch;color:rgba(243,233,214,0.84);margin-bottom:20px;}
   .foot-social{display:flex;gap:14px;}
   .foot-social a{
     width:44px;height:44px;border:1px solid var(--line-dark);border-radius:50%;
@@ -451,8 +451,8 @@
 <nav class="nav" id="nav">
   <div class="nav-inner">
     <a class="brand" href="#top">
-      <img src="data:image/png;base64,__LOGO_B64__" alt="JOUD logo">
-      <img class="wordmark" src="data:image/png;base64,__WORDMARK_B64__" alt="JOUD">
+      <img src="images/logo_icon.png" alt="JOUD logo">
+      <img class="wordmark" src="images/logo_wordmark.png" alt="JOUD">
       <span>JOUD</span>
     </a>
     <div class="nav-links" id="navLinks">
@@ -494,7 +494,7 @@
   <div class="hero-track" id="heroTrack">
 
     <div class="hero-panel" data-slide="0">
-      <div class="hero-bg" style="background-image:url('data:image/jpeg;base64,__HERO_DATES__');"></div>
+      <div class="hero-bg" style="background-image:url('images/hero_dates.jpg');"></div>
       <div class="hp-content">
         <span class="eyebrow-ar arabic">جود</span>
         <h1>From the finest land,<br>to your table.</h1>
@@ -504,7 +504,7 @@
     </div>
 
     <div class="hero-panel" data-slide="1">
-      <div class="hero-bg" style="background-image:url('data:image/jpeg;base64,__CAT_DATES__');"></div>
+      <div class="hero-bg" style="background-image:url('images/cat_dates.jpg');"></div>
       <div class="hp-content">
         <h2>Premium dates,<br>hand-picked.</h2>
         <p>Plump, richly sweet, and selected one batch at a time for texture and flavour that speaks for itself.</p>
@@ -512,7 +512,7 @@
     </div>
 
     <div class="hero-panel" data-slide="2">
-      <div class="hero-bg" style="background-image:url('data:image/jpeg;base64,__HERO_ALMOND__');"></div>
+      <div class="hero-bg" style="background-image:url('images/hero_almond.jpg');"></div>
       <div class="hp-content">
         <h2>Almonds &amp;<br>pistachios, done right.</h2>
         <p>Roasted and stored with care, so every handful tastes as fresh as the day it was packed.</p>
@@ -520,7 +520,7 @@
     </div>
 
     <div class="hero-panel" data-slide="3">
-      <div class="hero-bg" style="background-image:url('data:image/jpeg;base64,__HERO_WALNUT__');"></div>
+      <div class="hero-bg" style="background-image:url('images/hero_walnut.jpg');"></div>
       <div class="hp-content">
         <h2>Walnuts, cashews,<br>and everything between.</h2>
         <p>A full pantry of dry fruits, sourced the way you'd choose them yourself.</p>
@@ -528,7 +528,7 @@
     </div>
 
     <div class="hero-panel" data-slide="4">
-      <div class="hero-bg" style="background-image:url('data:image/jpeg;base64,__HERO_GIFT__');"></div>
+      <div class="hero-bg" style="background-image:url('images/hero_gift.jpg');"></div>
       <div class="hp-content">
         <h2>Gifting, made<br>meaningful.</h2>
         <p>For Eid, weddings, and every occasion worth remembering — boxed and presented with care.</p>
@@ -563,14 +563,14 @@
       <p>JOUD began with a simple idea: dates and dry fruits deserve the same attention as any fine food. Every batch is chosen by hand, checked for quality, and packed the way we'd want to receive it ourselves.</p>
       <p>No shortcuts, no fillers — just natural produce, sourced honestly and brought to your table with the taste and heritage it deserves.</p>
       <div class="sig">
-        <div class="sig-item"><div class="num" data-target="100" data-suffix="%">0%</div><div class="lbl">Natural produce</div></div>
-        <div class="sig-item"><div class="num" data-target="7" data-suffix="+">0+</div><div class="lbl">Varieties sourced</div></div>
+        <div class="sig-item"><div class="num" data-target="100" data-suffix="%">100%</div><div class="lbl">Natural produce</div></div>
+        <div class="sig-item"><div class="num" data-target="7" data-suffix="+">7+</div><div class="lbl">Varieties sourced</div></div>
         <div class="sig-item"><div class="num">A–Z</div><div class="lbl">Hand checked, batch by batch</div></div>
       </div>
     </div>
     <div class="about-media">
       <div class="frame"></div>
-      <img src="data:image/jpeg;base64,__ABOUT_IMG__" alt="JOUD dates and dry fruits arrangement">
+      <img src="images/about_img.jpg" alt="JOUD dates and dry fruits arrangement" loading="lazy" decoding="async">
     </div>
   </div>
 </section>
@@ -580,47 +580,47 @@
   <div class="wrap wrap-wide">
     <div class="cat-head">
       <h2 class="reveal">What we bring<br>to your table.</h2>
-      <p class="reveal">A curated range of dates and dry fruits — sample categories below. Reach out on WhatsApp for current availability and custom assortments.</p>
+      <p class="reveal">A considered range of dates and dry fruits, prepared for everyday sharing, gifting and special occasions. Reach out on WhatsApp for current availability and custom assortments.</p>
     </div>
     <div class="cat-grid reveal" id="catGrid">
 
       <a class="cat-card" href="dates.html" data-name="dates">
-        <div class="cat-bg" style="background-image:url('data:image/jpeg;base64,__CAT_DATES__');"></div>
+        <div class="cat-bg" style="background-image:url('images/cat_dates.jpg');"></div>
         <div class="cat-label"><h3>Dates</h3><span class="cat-link">Explore collection <span class="arrow">→</span></span></div>
       </a>
 
       <a class="cat-card" href="https://wa.me/919894938496?text=Hi%2C%20I%27m%20interested%20in%20Stuffed%20Dates%20from%20JOUD." target="_blank" rel="noopener" data-name="stuffed dates">
-        <div class="cat-bg" style="background-image:url('data:image/jpeg;base64,__CAT_STUFFED__');"></div>
+        <div class="cat-bg" style="background-image:url('images/cat_stuffed.jpg');"></div>
         <div class="cat-label"><h3>Stuffed Dates</h3><span class="cat-link">Enquire <span class="arrow">→</span></span></div>
       </a>
 
       <a class="cat-card" href="https://wa.me/919894938496?text=Hi%2C%20I%27m%20interested%20in%20Chocolate%20Dates%20from%20JOUD." target="_blank" rel="noopener" data-name="chocolate dates">
-        <div class="cat-bg" style="background-image:url('data:image/jpeg;base64,__CAT_CHOC__');"></div>
+        <div class="cat-bg" style="background-image:url('images/cat_choc.jpg');"></div>
         <div class="cat-label"><h3>Chocolate Dates</h3><span class="cat-link">Enquire <span class="arrow">→</span></span></div>
       </a>
 
       <a class="cat-card" href="https://wa.me/919894938496?text=Hi%2C%20I%27m%20interested%20in%20Mamool%20%26%20Sweets%20from%20JOUD." target="_blank" rel="noopener" data-name="mamool and sweets">
-        <div class="cat-bg" style="background-image:url('data:image/jpeg;base64,__CAT_MAMOOL__');"></div>
+        <div class="cat-bg" style="background-image:url('images/cat_mamool.jpg');"></div>
         <div class="cat-label"><h3>Mamool &amp; Sweets</h3><span class="cat-link">Enquire <span class="arrow">→</span></span></div>
       </a>
 
       <a class="cat-card" href="https://wa.me/919894938496?text=Hi%2C%20I%27m%20interested%20in%20Coffee%20%26%20More%20from%20JOUD." target="_blank" rel="noopener" data-name="coffee and more">
-        <div class="cat-bg" style="background-image:url('data:image/jpeg;base64,__CAT_COFFEE__');"></div>
+        <div class="cat-bg" style="background-image:url('images/cat_coffee.jpg');"></div>
         <div class="cat-label"><h3>Coffee &amp; More</h3><span class="cat-link">Enquire <span class="arrow">→</span></span></div>
       </a>
 
       <a class="cat-card" href="https://wa.me/919894938496?text=Hi%2C%20I%27m%20interested%20in%20Dry%20Fruits%20from%20JOUD." target="_blank" rel="noopener" data-name="dry fruits">
-        <div class="cat-bg" style="background-image:url('data:image/jpeg;base64,__CAT_DRYFRUITS__');"></div>
+        <div class="cat-bg" style="background-image:url('images/cat_dryfruits.jpg');"></div>
         <div class="cat-label"><h3>Dry Fruits</h3><span class="cat-link">Enquire <span class="arrow">→</span></span></div>
       </a>
 
       <a class="cat-card" href="https://wa.me/919894938496?text=Hi%2C%20I%27m%20interested%20in%20Signature%20Range%20from%20JOUD." target="_blank" rel="noopener" data-name="signature range">
-        <div class="cat-bg" style="background-image:url('data:image/jpeg;base64,__CAT_SIGNATURE__');"></div>
+        <div class="cat-bg" style="background-image:url('images/cat_signature.jpg');"></div>
         <div class="cat-label"><h3>Signature Range</h3><span class="cat-link">Enquire <span class="arrow">→</span></span></div>
       </a>
 
       <a class="cat-card" href="https://wa.me/919894938496?text=Hi%2C%20I%27m%20interested%20in%20Gifting%20Range%20from%20JOUD." target="_blank" rel="noopener" data-name="gifting range">
-        <div class="cat-bg" style="background-image:url('data:image/jpeg;base64,__CAT_GIFTING__');"></div>
+        <div class="cat-bg" style="background-image:url('images/cat_gifting.jpg');"></div>
         <div class="cat-label"><h3>Gifting Range</h3><span class="cat-link">Enquire <span class="arrow">→</span></span></div>
       </a>
 
@@ -663,7 +663,7 @@
           Chat on WhatsApp
         </a>
       </div>
-      <div class="gift-img" style="background-image:url('data:image/jpeg;base64,__GIFT_CTA_IMG__');background-position:center;"></div>
+      <div class="gift-img" style="background-image:url('images/gift_cta_img.jpg');background-position:center;"></div>
     </div>
   </div>
 </section>
@@ -674,8 +674,8 @@
     <div class="foot-top">
       <div>
         <div class="foot-brand">
-          <img src="data:image/png;base64,__LOGO_B64__" alt="JOUD logo">
-          <img class="wordmark" src="data:image/png;base64,__WORDMARK_B64__" alt="JOUD">
+          <img src="images/logo_icon.png" alt="JOUD logo" loading="lazy" decoding="async">
+          <img class="wordmark" src="images/logo_wordmark.png" alt="JOUD" loading="lazy" decoding="async">
           <span>JOUD</span>
         </div>
         <p class="foot-desc">Premium dates and dry fruits, chosen with care and brought from the finest land to your table. Taste, wellness, heritage.</p>
@@ -807,7 +807,9 @@ function nextHero(){ goHero(heroIndex + 1); }
 function prevHero(){ goHero(heroIndex - 1); }
 function startHeroAuto(){
   clearInterval(heroTimer);
-  heroTimer = setInterval(nextHero, HERO_INTERVAL);
+  if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    heroTimer = setInterval(nextHero, HERO_INTERVAL);
+  }
 }
 function restartHeroAuto(){ startHeroAuto(); }
 
@@ -852,12 +854,18 @@ revealEls.forEach(el=> io.observe(el));
 function countUp(el){
   const target = parseInt(el.dataset.target, 10);
   const suffix = el.dataset.suffix || '';
+  const initial = parseInt(el.textContent, 10) || 0;
+  if (initial >= target) {
+    el.textContent = target + suffix;
+    return;
+  }
   const duration = 1200;
   let startTime = null;
   function step(ts){
     if(!startTime) startTime = ts;
     const progress = Math.min((ts - startTime) / duration, 1);
-    el.textContent = Math.floor(progress * target) + suffix;
+    const value = Math.floor(initial + progress * (target - initial));
+    el.textContent = value + suffix;
     if(progress < 1) requestAnimationFrame(step);
     else el.textContent = target + suffix;
   }

@@ -1,10 +1,10 @@
 # JOUD — Dates & Dry Fruits — Website Package (v2)
 
 ## What's in this folder
-- **index.html** — the complete, ready-to-host website. Single self-contained file, all images embedded, no build step needed to use it.
+- **index.html** — the complete, ready-to-host homepage. It references the separate files in `images/` so browsers can cache assets efficiently.
 - **dates.html** — the dedicated premium dates collection with variety cards, filters, product quick views, and WhatsApp enquiries.
-- **source/joud-template.html** — the same site, but human-readable: images are `__TOKEN__` placeholders instead of huge base64 blobs. Edit this if you (or a developer) need to change text, layout, or styling.
-- **source/build.py** — run this after editing the template to bake the images back in and regenerate `index.html`. Usage:
+- **source/joud-template.html** — the human-readable source for the homepage. Edit this if you (or a developer) need to change text, layout, or styling.
+- **source/build.py** — validate the image assets and regenerate the lightweight `index.html`. Usage:
   ```
   cd source/
   python3 build.py
