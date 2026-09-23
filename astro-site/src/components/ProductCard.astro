@@ -1,0 +1,12 @@
+---
+import type { ProductCategory } from '../data/products';
+const { product } = Astro.props as { product: ProductCategory };
+const whatsapp = `https://wa.me/919894938496?text=${encodeURIComponent(`Hi, I'm interested in ${product.enquiry} from JOUD.`)}`;
+const href = product.href === '#enquire' ? whatsapp : product.href;
+---
+<article class="product-card">
+  <a href={href} target={href.startsWith('https://') ? '_blank' : undefined} rel={href.startsWith('https://') ? 'noopener' : undefined}>
+    <img src={product.image} alt={product.name} loading="lazy" decoding="async" />
+    <div class="product-copy"><span class="eyebrow">{product.slug.replaceAll('-', ' · ')}</span><h3>{product.name}</h3><p>{product.description}</p><span class="text-link">{product.name === 'Dates' ? 'Explore collection' : 'Enquire'} ↗</span></div>
+  </a>
+</article>

@@ -1,0 +1,27 @@
+---
+export interface Props {
+  src: string;
+  poster: string;
+  title: string;
+  description?: string;
+}
+
+const { src, poster, title, description } = Astro.props;
+---
+<section class="section video-section" aria-labelledby="video-title">
+  <div class="section-heading">
+    <span class="eyebrow">The JOUD ritual</span>
+    <h2 id="video-title">A closer look at what we choose.</h2>
+    {description && <p>{description}</p>}
+  </div>
+  <video controls preload="metadata" poster={poster} playsinline>
+    <source src={src} type="video/mp4" />
+    <track kind="captions" src="/videos/joud-en.vtt" srclang="en" label="English" />
+    Your browser does not support HTML video. <a href={src}>Download the video</a>.
+  </video>
+</section>
+
+<style>
+  .video-section{background:var(--ivory-soft)}
+  .video-section video{display:block;width:100%;max-height:680px;object-fit:cover;background:var(--tea);border:1px solid var(--line)}
+</style>
