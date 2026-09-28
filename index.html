@@ -246,6 +246,10 @@
     .hero{height:82vh;height:82dvh;min-height:520px;}
     .hero-arrow{width:44px;height:44px;}
     .hero-arrow svg{width:17px;height:17px;}
+    /* Keep the product clusters visible in the tall mobile crop. */
+    .hero-panel:nth-child(3) .hero-bg,
+    .hero-panel:nth-child(4) .hero-bg,
+    .hero-panel:nth-child(5) .hero-bg{background-position:76% center;}
   }
 
   /* ---------- SECTION shared ---------- */
@@ -349,6 +353,26 @@
     .cat-card:nth-child(1),.cat-card:nth-child(8){grid-column:span 1;}
   }
 
+  /* ---------- SIGNATURE DATES ---------- */
+  .signature-dates{background:var(--ivory);color:var(--charcoal);}
+  .signature-head{display:flex;justify-content:space-between;align-items:end;gap:24px;margin-bottom:42px;flex-wrap:wrap;}
+  .signature-head h2{font-size:clamp(1.9rem,3.6vw,2.6rem);max-width:16ch;}
+  .signature-head p{color:var(--fg-soft);max-width:38ch;line-height:1.6;}
+  .signature-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;}
+  .signature-card{position:relative;min-height:360px;display:flex;align-items:flex-end;overflow:hidden;border:1px solid rgba(154,96,54,.3);background:var(--charcoal);color:var(--ivory);}
+  .signature-card img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .6s ease;}
+  .signature-card::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(22,19,16,0) 35%,rgba(22,19,16,.88) 100%);}
+  .signature-card:hover img{transform:scale(1.06);}
+  .signature-card-content{position:relative;z-index:1;padding:22px;width:100%;}
+  .signature-card-content span{color:var(--gold-light);font-size:.67rem;letter-spacing:.18em;text-transform:uppercase;}
+  .signature-card-content h3{font:400 1.45rem 'Marcellus',serif;margin:7px 0 5px;}
+  .signature-card-content a{color:var(--gold-light);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;}
+  .signature-cta{display:flex;justify-content:center;margin-top:34px;}
+  .signature-cta a{border:1px solid var(--gold);color:var(--gold);padding:12px 22px;font-size:.76rem;letter-spacing:.1em;text-transform:uppercase;transition:.25s;}
+  .signature-cta a:hover{background:var(--gold);color:var(--ivory);}
+  @media (max-width:900px){.signature-grid{grid-template-columns:repeat(2,1fr);}.signature-card{min-height:300px;}}
+  @media (max-width:480px){.signature-grid{grid-template-columns:1fr;}.signature-card{min-height:330px;}}
+
   /* ---------- WHY JOUD strip ---------- */
   .why{background:var(--charcoal-2);color:#F3E9D6;}
   .why-grid{display:grid;grid-template-columns:repeat(4,1fr);}
@@ -384,19 +408,19 @@
   .gift-text p{color:var(--fg-soft);line-height:1.7;margin-bottom:26px;max-width:44ch;}
   .btn-primary{
     position:relative;overflow:hidden;z-index:1;
-    display:inline-flex;align-items:center;gap:10px;background:var(--gold);color:#fff;
-    padding:16px 32px;font-size:0.82rem;letter-spacing:0.1em;text-transform:uppercase;width:fit-content;
-    clip-path:polygon(0 0, calc(100% - 14px) 0, 100% 14px, 100% 100%, 14px 100%, 0 calc(100% - 14px));
-    transition:color .35s ease, transform .15s ease;
+    display:inline-flex;align-items:center;gap:10px;background:transparent;color:var(--charcoal);
+    padding:14px 25px;border:1px solid var(--gold);border-radius:999px;
+    font-size:0.82rem;letter-spacing:0.1em;text-transform:uppercase;width:fit-content;
+    transition:color .35s ease, transform .25s ease, box-shadow .25s ease;
   }
   .btn-primary::after{
     content:"";position:absolute;inset:0;z-index:-1;
-    background:var(--gold-light);
-    transform:translateX(-102%);transition:transform .4s cubic-bezier(.65,0,.35,1);
+    background:var(--gold);
+    transform:scaleX(0);transform-origin:left center;transition:transform .35s cubic-bezier(.65,0,.35,1);
   }
-  .btn-primary:hover::after, .btn-primary:active::after{transform:translateX(0);}
-  .btn-primary:hover, .btn-primary:active{color:var(--charcoal);}
-  .btn-primary:active{transform:scale(0.97);}
+  .btn-primary:hover::after, .btn-primary:active::after{transform:scaleX(1);}
+  .btn-primary:hover, .btn-primary:active{color:var(--ivory);transform:translateY(-2px);box-shadow:0 10px 22px rgba(154,96,54,.22);}
+  .btn-primary:active{transform:translateY(0) scale(.98);}
   .btn-primary svg{width:18px;height:18px;fill:currentColor;}
   .gift-img{background-size:cover;background-position:center;min-height:280px;}
   @media (max-width:800px){.gift-box{grid-template-columns:1fr;}.gift-img{min-height:220px;order:-1;}}
@@ -515,22 +539,30 @@
     </div>
 
     <div class="hero-panel" data-slide="2">
-      <div class="hero-bg" style="background-image:url('images/hero_almond.jpg');"></div>
+      <div class="hero-bg" style="background-image:url('images/hero_figs.jpg');"></div>
       <div class="hp-content">
-        <h2>Almonds &amp;<br>pistachios, done right.</h2>
-        <p>Roasted and stored with care, so every handful tastes as fresh as the day it was packed.</p>
+        <h2>Dry figs with<br>quiet richness.</h2>
+        <p>Sun-dried slowly for a tender bite, ruby depth, and the kind of sweetness that lingers beautifully.</p>
       </div>
     </div>
 
     <div class="hero-panel" data-slide="3">
-      <div class="hero-bg" style="background-image:url('images/hero_walnut.jpg');"></div>
+      <div class="hero-bg" style="background-image:url('images/hero_almond_cashew.jpg');"></div>
       <div class="hp-content">
-        <h2>Walnuts, cashews,<br>and everything between.</h2>
-        <p>A full pantry of dry fruits, sourced the way you'd choose them yourself.</p>
+        <h2>Almonds &amp;<br>cashews, done right.</h2>
+        <p>Roasted and stored with care, so every handful tastes as fresh as the day it was packed.</p>
       </div>
     </div>
 
     <div class="hero-panel" data-slide="4">
+      <div class="hero-bg" style="background-image:url('images/hero_walnut_pistachio.jpg');"></div>
+      <div class="hp-content">
+        <h2>Walnuts &amp;<br>pistachios, naturally.</h2>
+        <p>Rich, textured, and carefully selected for the kind of sharing that turns a moment into a ritual.</p>
+      </div>
+    </div>
+
+    <div class="hero-panel" data-slide="5">
       <div class="hero-bg" style="background-image:url('images/hero_gift.jpg');"></div>
       <div class="hp-content">
         <h2>Gifting, made<br>meaningful.</h2>
@@ -551,9 +583,10 @@
   <div class="hero-dots" id="heroDots">
     <button class="active" data-i="0" aria-label="Slide 1"></button>
     <button data-i="1" aria-label="Slide 2"></button>
-    <button data-i="2" aria-label="Slide 3"></button>
+    <button data-i="2" aria-label="Slide 3: Figs"></button>
     <button data-i="3" aria-label="Slide 4"></button>
     <button data-i="4" aria-label="Slide 5"></button>
+    <button data-i="5" aria-label="Slide 6"></button>
   </div>
 </div>
 
@@ -567,7 +600,7 @@
       <p>No shortcuts, no fillers — just natural produce, sourced honestly and brought to your table with the taste and heritage it deserves.</p>
       <div class="sig">
         <div class="sig-item"><div class="num" data-target="100" data-suffix="%">100%</div><div class="lbl">Natural produce</div></div>
-        <div class="sig-item"><div class="num" data-target="7" data-suffix="+">7+</div><div class="lbl">Varieties sourced</div></div>
+        <div class="sig-item"><div class="num" data-target="10" data-suffix="+">10+</div><div class="lbl">Varieties sourced</div></div>
         <div class="sig-item"><div class="num">A–Z</div><div class="lbl">Hand checked, batch by batch</div></div>
       </div>
     </div>
@@ -592,42 +625,44 @@
         <div class="cat-label"><h3>Dates</h3><span class="cat-link">Explore collection <span class="arrow">→</span></span></div>
       </a>
 
-      <a class="cat-card" href="https://wa.me/919894938496?text=Hi%2C%20I%27m%20interested%20in%20Stuffed%20Dates%20from%20JOUD." target="_blank" rel="noopener" data-name="stuffed dates">
-        <div class="cat-bg" style="background-image:url('images/cat_stuffed.jpg');"></div>
-        <div class="cat-label"><h3>Stuffed Dates</h3><span class="cat-link">Enquire <span class="arrow">→</span></span></div>
+      <a class="cat-card" href="category.html?category=nuts" data-name="nuts">
+        <div class="cat-bg" style="background-image:url('images/cat_nuts.jpg');"></div>
+        <div class="cat-label"><h3>Nuts</h3><span class="cat-link">Enquire <span class="arrow">→</span></span></div>
       </a>
 
-      <a class="cat-card" href="https://wa.me/919894938496?text=Hi%2C%20I%27m%20interested%20in%20Chocolate%20Dates%20from%20JOUD." target="_blank" rel="noopener" data-name="chocolate dates">
-        <div class="cat-bg" style="background-image:url('images/cat_choc.jpg');"></div>
-        <div class="cat-label"><h3>Chocolate Dates</h3><span class="cat-link">Enquire <span class="arrow">→</span></span></div>
+      <a class="cat-card" href="category.html?category=seeds" data-name="seeds">
+        <div class="cat-bg" style="background-image:url('images/cat_seeds.jpg');"></div>
+        <div class="cat-label"><h3>Seeds</h3><span class="cat-link">Enquire <span class="arrow">→</span></span></div>
       </a>
 
-      <a class="cat-card" href="https://wa.me/919894938496?text=Hi%2C%20I%27m%20interested%20in%20Mamool%20%26%20Sweets%20from%20JOUD." target="_blank" rel="noopener" data-name="mamool and sweets">
-        <div class="cat-bg" style="background-image:url('images/cat_mamool.jpg');"></div>
-        <div class="cat-label"><h3>Mamool &amp; Sweets</h3><span class="cat-link">Enquire <span class="arrow">→</span></span></div>
+      <a class="cat-card" href="category.html?category=dried-fruits" data-name="dried fruits">
+        <div class="cat-bg" style="background-image:url('images/cat_dried_fruits.jpg');"></div>
+        <div class="cat-label"><h3>Dried Fruits</h3><span class="cat-link">Enquire <span class="arrow">→</span></span></div>
       </a>
 
-      <a class="cat-card" href="https://wa.me/919894938496?text=Hi%2C%20I%27m%20interested%20in%20Coffee%20%26%20More%20from%20JOUD." target="_blank" rel="noopener" data-name="coffee and more">
-        <div class="cat-bg" style="background-image:url('images/cat_coffee.jpg');"></div>
-        <div class="cat-label"><h3>Coffee &amp; More</h3><span class="cat-link">Enquire <span class="arrow">→</span></span></div>
-      </a>
-
-      <a class="cat-card" href="https://wa.me/919894938496?text=Hi%2C%20I%27m%20interested%20in%20Dry%20Fruits%20from%20JOUD." target="_blank" rel="noopener" data-name="dry fruits">
-        <div class="cat-bg" style="background-image:url('images/cat_dryfruits.jpg');"></div>
-        <div class="cat-label"><h3>Dry Fruits</h3><span class="cat-link">Enquire <span class="arrow">→</span></span></div>
-      </a>
-
-      <a class="cat-card" href="https://wa.me/919894938496?text=Hi%2C%20I%27m%20interested%20in%20Signature%20Range%20from%20JOUD." target="_blank" rel="noopener" data-name="signature range">
-        <div class="cat-bg" style="background-image:url('images/cat_signature.jpg');"></div>
-        <div class="cat-label"><h3>Signature Range</h3><span class="cat-link">Enquire <span class="arrow">→</span></span></div>
-      </a>
-
-      <a class="cat-card" href="https://wa.me/919894938496?text=Hi%2C%20I%27m%20interested%20in%20Gifting%20Range%20from%20JOUD." target="_blank" rel="noopener" data-name="gifting range">
+      <a class="cat-card" href="https://wa.me/919894938496?text=Hi%2C%20I%27m%20interested%20in%20Gifting%20from%20JOUD." target="_blank" rel="noopener" data-name="gifting">
         <div class="cat-bg" style="background-image:url('images/cat_gifting.jpg');"></div>
-        <div class="cat-label"><h3>Gifting Range</h3><span class="cat-link">Enquire <span class="arrow">→</span></span></div>
+        <div class="cat-label"><h3>Gifting</h3><span class="cat-link">Enquire <span class="arrow">→</span></span></div>
       </a>
 
     </div>
+  </div>
+</section>
+
+<!-- SIGNATURE DATES -->
+<section class="signature-dates section-pad" id="signature-dates">
+  <div class="wrap wrap-wide">
+    <div class="signature-head">
+      <div><div class="eyebrow">The signature edit</div><h2>Four dates worth knowing.</h2></div>
+      <p>A considered selection from our nine-variety collection — chosen for contrast, character, and the pleasure of sharing.</p>
+    </div>
+    <div class="signature-grid">
+      <article class="signature-card"><img src="images/ajwa.jpg" alt="Ajwa dates" loading="lazy" decoding="async"><div class="signature-card-content"><span>Heritage</span><h3>Ajwa</h3><a href="date-detail.html?product=ajwa">Discover variety ↗</a></div></article>
+      <article class="signature-card"><img src="images/mabroom.jpg" alt="Mabroom dates" loading="lazy" decoding="async"><div class="signature-card-content"><span>Refined</span><h3>Mabroom</h3><a href="date-detail.html?product=mabroom">Discover variety ↗</a></div></article>
+      <article class="signature-card"><img src="images/sukkary.jpg" alt="Sukkary dates" loading="lazy" decoding="async"><div class="signature-card-content"><span>Honeyed</span><h3>Sukkary</h3><a href="date-detail.html?product=sukkary">Discover variety ↗</a></div></article>
+      <article class="signature-card"><img src="images/safawi.jpg" alt="Safawi dates" loading="lazy" decoding="async"><div class="signature-card-content"><span>Deep</span><h3>Safawi</h3><a href="date-detail.html?product=safawi">Discover variety ↗</a></div></article>
+    </div>
+    <div class="signature-cta"><a href="dates.html">View all 9 varieties ↗</a></div>
   </div>
 </section>
 
