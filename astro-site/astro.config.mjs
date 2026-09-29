@@ -1,7 +1,7 @@
 import { defineConfig } from 'astro/config';
 
 export default defineConfig({
-  site: 'https://joud-website-package.vercel.app',
+  site: 'https://joudtraders.com',
   output: 'static',
   trailingSlash: 'never'
 });

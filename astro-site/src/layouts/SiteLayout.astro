@@ -14,11 +14,32 @@ const canonical = new URL(Astro.url.pathname, Astro.site);
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
     <meta name="description" content={description} />
+    <meta name="robots" content="index,follow,max-image-preview:large" />
+    <meta name="author" content="JOUD For Dates &amp; Dry Fruits" />
+    <meta name="theme-color" content="#1C1814" />
     <link rel="canonical" href={canonical} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:image" content={new URL(image, Astro.site)} />
+    <meta property="og:image:alt" content={`${title} — JOUD premium dates and dry fruits`} />
+    <meta property="og:site_name" content="JOUD For Dates &amp; Dry Fruits" />
     <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonical} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={`${title} | JOUD`} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={new URL(image, Astro.site)} />
+    <script type="application/ld+json" set:html={JSON.stringify({
+      '@context': 'https://schema.org',
+      '@type': 'Organization',
+      '@id': 'https://joudtraders.com/#organization',
+      name: 'JOUD For Dates & Dry Fruits',
+      alternateName: 'JOUD',
+      url: 'https://joudtraders.com/',
+      logo: 'https://joudtraders.com/images/logo_wordmark.png',
+      image: 'https://joudtraders.com/images/hero_gift.jpg',
+      sameAs: ['https://wa.me/919894938496']
+    })}></script>
     <title>{title} | JOUD</title>
   </head>
   <body>
