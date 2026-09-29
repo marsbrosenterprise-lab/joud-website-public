@@ -14,12 +14,19 @@
 p{text-align:justify}
 </style>
 <style>
-.card{background:#1C1814;border:1px solid rgba(196,154,82,.42);border-radius:16px;overflow:hidden;box-shadow:0 16px 34px rgba(20,35,27,.22)}
+.card{--lift-color:rgba(140,154,122,.35);--edge-color:#8C9A7A;background:#1C1814;border:1px solid rgba(196,154,82,.42);border-radius:16px;overflow:hidden;box-shadow:0 16px 34px rgba(20,35,27,.22)}
 .card-body{background:linear-gradient(180deg,rgba(28,24,20,.96),#1C1814);padding:24px 22px 23px}
 .card h3{color:#F6EFE0}
 .card p{color:rgba(246,239,224,.78)}
 .card .type,.card .enquire{color:#C49A52}
 .card:hover{border-color:rgba(196,154,82,.8);box-shadow:0 24px 46px rgba(20,35,27,.32)}
+.card{position:relative;transition:transform .35s ease,box-shadow .35s ease,border-color .35s ease}
+.card:hover,.card:focus-visible{transform:translateY(-6px) scale(1.015);border-color:rgba(184,199,160,.9);box-shadow:0 24px 46px rgba(20,35,27,.32),0 0 26px rgba(184,199,160,.24)}
+.card:focus-visible{outline:2px solid #B8C7A0;outline-offset:4px}
+.card::after{content:"";position:absolute;inset:0;z-index:0;pointer-events:none;background:radial-gradient(circle at 50% 25%,var(--lift-color),transparent 66%);opacity:0;transition:opacity .35s ease}
+.card-image,.card-body{position:relative;z-index:1}
+.card:hover,.card:focus-visible{border-color:var(--edge-color);box-shadow:0 24px 46px rgba(20,35,27,.32),0 0 26px var(--lift-color)}
+.card:hover::after,.card:focus-visible::after{opacity:1}
 .hero{padding:58px 0 48px}
 .hero-grid{display:block}
 .hero-image{display:none}
