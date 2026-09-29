@@ -46,7 +46,8 @@ p{text-align:justify}
 <style>
 .nav-cta{display:inline-flex;align-items:center;gap:7px;padding:8px 16px;font-size:.72rem;letter-spacing:.1em;transition:background .3s ease,color .3s ease,transform .15s ease}.nav-cta svg{width:17px;height:17px;fill:currentColor}.wa-float{position:fixed;bottom:24px;right:20px;z-index:90;width:52px;height:52px;border-radius:50%;background:#20c763;border:1px solid rgba(255,255,255,.16);display:flex;align-items:center;justify-content:center;box-shadow:0 8px 22px rgba(0,0,0,.24);transition:transform .25s ease;animation:waPulseRefined 4.2s ease-in-out infinite}.wa-float:hover{transform:scale(1.06)}.wa-float svg{width:26px;height:26px;fill:#fff}@keyframes waPulseRefined{0%,100%{box-shadow:0 8px 22px rgba(0,0,0,.24),0 0 0 0 rgba(32,199,99,.2)}50%{box-shadow:0 8px 22px rgba(0,0,0,.24),0 0 0 6px rgba(32,199,99,0)}}@media(max-width:800px){.wa-float{right:14px;bottom:16px}.nav-cta{padding:8px 13px}}@media(max-width:400px){.nav-cta{width:40px;height:40px;padding:0;justify-content:center}.nav-cta-label{display:none}}@media(prefers-reduced-motion:reduce){.wa-float{animation:none}}
 </style>
-</head>
+ <style>.breadcrumbs{padding:92px 24px 0;color:var(--muted);font-size:.78rem;letter-spacing:.04em}.breadcrumbs a{color:#8b572f;text-decoration:underline;text-underline-offset:3px}.breadcrumbs span{margin:0 8px}@media(max-width:800px){.breadcrumbs{padding-top:82px}}</style>
+ </head>
 <style>
 .nav-cta svg,.wa-float svg{background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ffffff' stroke-width='1.7' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M20 11.5a8 8 0 0 1-11.7 7.1L4 20l1.4-4.1A8 8 0 1 1 20 11.5Z'/%3E%3Cpath d='M8.7 8.5c.2-.4.4-.4.7-.4h.4c.2 0 .3.1.4.3l.7 1.6c.1.2.1.4-.1.6l-.5.5c.4.8 1.1 1.5 1.9 1.9l.5-.5c.2-.2.4-.2.6-.1l1.5.7c.2.1.3.2.3.4v.4c0 .3-.1.5-.4.7-.4.2-.9.3-1.4.2-2.5-.5-4.5-2.5-5-5-.1-.5 0-1 .2-1.4Z'/%3E%3C/svg%3E") center/contain no-repeat}
  .nav-cta svg path,.wa-float svg path{display:none}
@@ -84,7 +85,8 @@ document.getElementById('ogUrl').setAttribute('content', categoryCanonical);
     ]
   });
 </script>
-</body>
+ <script>(()=>{const main=document.querySelector('main');if(!main)return;const crumb=document.createElement('nav');crumb.className='breadcrumbs wrap';crumb.setAttribute('aria-label','Breadcrumb');crumb.innerHTML='<a href="index.html#top">Home</a><span aria-hidden="true">/</span><a href="index.html#products">Collections</a><span aria-hidden="true">/</span><span>'+((typeof data!=='undefined'&&data.title)||'Nuts Collection')+'</span>';main.insertBefore(crumb,main.firstChild);})();</script>
+ </body>
 <script>
 (()=>{
   const inner=document.querySelector('.nav-inner');
