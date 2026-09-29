@@ -6,7 +6,11 @@
 <meta name="description" content="Discover a JOUD date variety in detail — its texture, character, serving moments and availability.">
 <meta name="robots" content="index,follow,max-image-preview:large">
 <meta name="author" content="JOUD For Dates &amp; Dry Fruits">
-<link rel="canonical" href="https://joudtraders.com/date-detail.html">
+<link id="pageCanonical" rel="canonical" href="https://joudtraders.com/date-detail.html?product=ajwa">
+<meta property="og:title" id="ogTitle" content="Ajwa | JOUD Dates">
+<meta property="og:description" id="ogDescription" content="Discover this JOUD date variety in detail.">
+<meta property="og:url" id="ogUrl" content="https://joudtraders.com/date-detail.html?product=ajwa">
+<meta property="og:type" content="article">
 <meta property="og:site_name" content="JOUD For Dates &amp; Dry Fruits">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://joudtraders.com/date-detail.html">
@@ -43,6 +47,16 @@
 const products={ajwa:{title:'Ajwa',type:'Dark · delicate · earthy',image:'ajwa.jpg',hero:'Small, deeply coloured, and distinctive with a softly spiced finish.',description:'Ajwa brings a quietly complex character to the collection, with a delicate bite and earthy depth for slow mornings and meaningful rituals.',experience:'Delicate & complex',best:'Slow mornings, rituals'},amber:{title:'Amber',type:'Golden · glossy · gentle',image:'amber.jpg',hero:'A luminous amber date with a smooth bite and elegant sweetness.',description:'Amber is bright, graceful, and beautifully easy to enjoy — a refined choice for sharing or gifting.',experience:'Smooth & elegant',best:'Sharing, gifting'},safawi:{title:'Safawi',type:'Dark · rich · chewy',image:'safawi.jpg',hero:'Deep in colour and flavour, with a satisfying, naturally chewy texture.',description:'Safawi offers a full, dark sweetness and a generous chew for those who prefer a more composed date experience.',experience:'Rich & chewy',best:'Connoisseurs, coffee'},mabroom:{title:'Mabroom',type:'Long · chewy · refined',image:'mabroom.jpg',hero:'Slender and composed, with a deep sweetness that lingers beautifully.',description:'Mabroom brings an elegant, elongated texture and a deeper sweetness to the collection.',experience:'Deep & refined',best:'Gifting, hosting'},sugai:{title:'Sugai',type:'Warm · soft · balanced',image:'sugai.jpg',hero:'A beautifully balanced date with a warm tone and tender finish.',description:'Sugai is an easy, welcoming variety with gentle sweetness and a soft, satisfying bite.',experience:'Warm & balanced',best:'Everyday enjoyment'},sufri:{title:'Sufri',type:'Soft · golden · delicate',image:'sufri.jpg',hero:'Light, tender, and gently sweet for an easy, graceful bite.',description:'Sufri offers a softer, lighter expression of the date — delicate enough for quiet moments and beautiful sharing.',experience:'Tender & delicate',best:'Light sharing, gifting'},khudri:{title:'Khudri',type:'Rich · warm · satisfying',image:'khudri.jpg',hero:'A dependable favourite with generous flavour and a pleasantly chewy finish.',description:'Khudri is a warm everyday favourite, made for pairing with coffee, nuts, and good conversation.',experience:'Warm & satisfying',best:'Everyday enjoyment'},sukkary:{title:'Sukkary',type:'Caramel · tender · glossy',image:'sukkary.jpg',hero:'Plump and naturally caramel-like, with a soft, honeyed finish.',description:'Sukkary brings a tender texture and naturally caramel-like sweetness that feels celebratory without being loud.',experience:'Honeyed & tender',best:'Festive gifting'},mashrooq:{title:'Mashrooq',type:'Deep · glossy · generous',image:'mashrooq.jpg',hero:'A rich, beautifully textured date chosen for a memorable finish.',description:'Mashrooq completes the collection with a generous bite, deep colour, and a lingering sweetness.',experience:'Generous & full-bodied',best:'Sharing, hosting'}};
  const key=new URLSearchParams(location.search).get('product')||'ajwa',p=products[key]||products.ajwa;document.title=p.title+' | JOUD Dates';document.getElementById('type').textContent=p.type;document.getElementById('title').textContent=p.title;document.getElementById('heroDescription').textContent=p.hero;const heroImage=document.getElementById('heroImage');if(heroImage){heroImage.src='images/'+p.image;heroImage.alt=p.title+' dates';}document.getElementById('description').textContent=p.description;document.getElementById('experience').textContent=p.experience;document.getElementById('best').textContent=p.best;const message=encodeURIComponent('Hi, I am interested in '+p.title+' from the JOUD Dates Collection.');document.getElementById('detailWhatsapp').href='https://wa.me/919894938496?text='+message;document.getElementById('closingWhatsapp').href='https://wa.me/919894938496?text='+message;document.getElementById('year').textContent=new Date().getFullYear();
 const videoWatch=document.getElementById('videoWatch'),videoPoster=document.getElementById('videoPoster'),productVideo=document.getElementById('productVideo');videoWatch.addEventListener('click',()=>{productVideo.src=productVideo.dataset.src;productVideo.hidden=false;videoPoster.remove();});
+</script>
+<script>
+const detailCanonical = 'https://joudtraders.com/date-detail.html?product=' + encodeURIComponent(key);
+const detailDescription = p.description;
+document.querySelector('meta[name="description"]').setAttribute('content', detailDescription);
+document.getElementById('pageDescription').setAttribute('content', detailDescription);
+document.getElementById('pageCanonical').setAttribute('href', detailCanonical);
+document.getElementById('ogTitle').setAttribute('content', p.title + ' | JOUD Dates');
+document.getElementById('ogDescription').setAttribute('content', detailDescription);
+document.getElementById('ogUrl').setAttribute('content', detailCanonical);
 </script>
 </body>
 <script>

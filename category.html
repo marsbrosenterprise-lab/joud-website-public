@@ -6,7 +6,11 @@
 <meta name="description" id="pageDescription" content="Explore JOUD's carefully selected premium produce.">
 <meta name="robots" content="index,follow,max-image-preview:large">
 <meta name="author" content="JOUD For Dates &amp; Dry Fruits">
-<link rel="canonical" href="https://joudtraders.com/category.html">
+<link id="pageCanonical" rel="canonical" href="https://joudtraders.com/category.html?category=nuts">
+<meta property="og:title" id="ogTitle" content="Nuts Collection | JOUD">
+<meta property="og:description" id="ogDescription" content="Explore JOUD's carefully selected premium produce.">
+<meta property="og:url" id="ogUrl" content="https://joudtraders.com/category.html?category=nuts">
+<meta property="og:type" content="website">
 <meta property="og:site_name" content="JOUD For Dates &amp; Dry Fruits">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://joudtraders.com/category.html">
@@ -61,6 +65,16 @@ const collections={
  'dried-fruits':{title:'Dried Fruits Collection',hero:'cat_dried_fruits.jpg',copy:'Sun-ripened fruit, gently dried to hold on to its colour, texture, and generous natural sweetness.',intro:'From tender apricots to deep prunes, discover a colourful selection for snacking, sharing, and gifting.',products:[['Dried Figs','Tender · textured · naturally sweet','dried-figs.jpg','A tender, textured fruit with a naturally rich sweetness.'],['Dried Apricots','Bright · soft · honeyed','dried-apricots.jpg','Bright and softly chewy, with a warm honeyed finish.'],['Raisins','Deep · fruity · familiar','raisins.jpg','A naturally fruity pantry classic with concentrated sweetness.'],['Dried Cranberries','Tart · vivid · chewy','dried-cranberries.jpg','Vivid and pleasantly tart with a soft, chewy texture.'],['Prunes','Deep · soft · rich','prunes.jpg','Deeply coloured and soft, with a rich, rounded fruitiness.']]}
 };
 const key=new URLSearchParams(location.search).get('category')||'nuts';const data=collections[key]||collections.nuts;document.title=data.title+' | JOUD';document.getElementById('pageTitle').textContent=data.title+' | JOUD';document.getElementById('heroTitle').textContent=data.title;document.getElementById('heroCopy').textContent=data.copy;document.getElementById('sectionTitle').textContent='Find your favourite.';document.getElementById('sectionIntro').textContent=data.intro;document.getElementById('heroImage').src='images/'+data.hero;document.getElementById('heroImage').alt=data.title;document.getElementById('closingLink').href='https://wa.me/919894938496?text='+encodeURIComponent('Hi, I am interested in the JOUD '+data.title+'.');document.getElementById('productGrid').innerHTML=data.products.map(([name,type,image,copy])=>'<article class="card"><div class="card-image"><img src="images/'+image+'" alt="'+name+'" loading="lazy" decoding="async"></div><div class="card-body"><div class="type">'+type+'</div><h3>'+name+'</h3><p>'+copy+'</p><a class="enquire" href="https://wa.me/919894938496?text='+encodeURIComponent('Hi, I am interested in '+name+' from the JOUD '+data.title+'.')+'" target="_blank" rel="noopener">Enquire <span>→</span></a></div></article>').join('');document.getElementById('year').textContent=new Date().getFullYear();
+</script>
+<script>
+const categoryCanonical = 'https://joudtraders.com/category.html?category=' + encodeURIComponent(key);
+const categoryDescription = data.copy + ' ' + data.intro;
+document.querySelector('meta[name="description"]').setAttribute('content', categoryDescription);
+document.getElementById('pageDescription').setAttribute('content', categoryDescription);
+document.getElementById('pageCanonical').setAttribute('href', categoryCanonical);
+document.getElementById('ogTitle').setAttribute('content', data.title + ' | JOUD');
+document.getElementById('ogDescription').setAttribute('content', categoryDescription);
+document.getElementById('ogUrl').setAttribute('content', categoryCanonical);
 </script>
 </body>
 <script>

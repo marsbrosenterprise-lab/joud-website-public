@@ -3,4 +3,16 @@
   <url><loc>https://joudtraders.com/</loc><priority>1.0</priority></url>
   <url><loc>https://joudtraders.com/dates.html</loc><priority>0.8</priority></url>
   <url><loc>https://joudtraders.com/gifting.html</loc><priority>0.8</priority></url>
+  <url><loc>https://joudtraders.com/category.html?category=nuts</loc><priority>0.7</priority></url>
+  <url><loc>https://joudtraders.com/category.html?category=seeds</loc><priority>0.7</priority></url>
+  <url><loc>https://joudtraders.com/category.html?category=dried-fruits</loc><priority>0.7</priority></url>
+  <url><loc>https://joudtraders.com/date-detail.html?product=ajwa</loc><priority>0.6</priority></url>
+  <url><loc>https://joudtraders.com/date-detail.html?product=amber</loc><priority>0.6</priority></url>
+  <url><loc>https://joudtraders.com/date-detail.html?product=safawi</loc><priority>0.6</priority></url>
+  <url><loc>https://joudtraders.com/date-detail.html?product=mabroom</loc><priority>0.6</priority></url>
+  <url><loc>https://joudtraders.com/date-detail.html?product=sugai</loc><priority>0.6</priority></url>
+  <url><loc>https://joudtraders.com/date-detail.html?product=sufri</loc><priority>0.6</priority></url>
+  <url><loc>https://joudtraders.com/date-detail.html?product=khudri</loc><priority>0.6</priority></url>
+  <url><loc>https://joudtraders.com/date-detail.html?product=sukkary</loc><priority>0.6</priority></url>
+  <url><loc>https://joudtraders.com/date-detail.html?product=mashrooq</loc><priority>0.6</priority></url>
 </urlset>
