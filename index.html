@@ -502,6 +502,21 @@
     #heroPrev,#heroNext{display:none}
     .wa-float{width:50px;height:50px;right:14px;bottom:16px}
   }
+  /* Homepage-only category treatment: restore the image-led overlay layout. */
+  .cat-grid{grid-auto-rows:clamp(150px,20vw,240px)}
+  .cat-card{display:flex;align-items:flex-end;justify-content:initial;height:auto;min-height:0;padding:22px;background:transparent;border:1px solid rgba(217,172,102,.22)}
+  .cat-card:nth-child(1){grid-column:span 2;grid-row:span 2;padding:28px}
+  .cat-card .cat-bg{position:absolute;inset:0;width:auto;height:auto;flex:none;background-size:cover;z-index:0}
+  .cat-card::before{display:block;content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,rgba(14,11,9,0) 52%,rgba(11,9,7,.6) 74%,rgba(8,6,5,.95) 100%)}
+  .cat-card .cat-label{position:relative;inset:auto;z-index:2;flex:none;min-height:0;padding:0;background:transparent}
+  .cat-card h3{font-size:1.05rem;margin-bottom:6px}
+  .cat-card:nth-child(1) .cat-label h3{font-size:1.4rem}
+  @media(max-width:700px){
+    .cat-grid{grid-auto-rows:auto}
+    .cat-card,.cat-card:nth-child(1){height:300px;min-height:0;padding:20px}
+    .cat-card:nth-child(1){grid-column:span 1;grid-row:span 1}
+    .cat-card .cat-label{min-height:0;padding:0}
+  }
 </style>
 </head>
 <body>
