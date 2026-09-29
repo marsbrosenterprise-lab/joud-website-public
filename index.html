@@ -5,12 +5,46 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>JOUD — Premium Dates &amp; Dry Fruits</title>
 <meta name="description" content="JOUD — carefully selected premium dates, nuts and dry fruits. Natural, honest, and perfect for gifting. Enquire on WhatsApp.">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta name="author" content="JOUD For Dates &amp; Dry Fruits">
+<meta name="theme-color" content="#1C1814">
 <link rel="canonical" href="https://joudtraders.com/">
 <meta property="og:title" content="JOUD — Premium Dates &amp; Dry Fruits">
 <meta property="og:description" content="Carefully selected dates, nuts and dry fruits — natural, premium, and perfect for gifting. From the finest land to your table.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://joudtraders.com/">
-<meta property="og:image" content="images/hero_gift.jpg">
+<meta property="og:image" content="https://joudtraders.com/images/hero_gift.jpg">
+<meta property="og:image:alt" content="JOUD premium dates and dry fruits gift selection">
+<meta property="og:site_name" content="JOUD For Dates &amp; Dry Fruits">
+<meta name="twitter:title" content="JOUD — Premium Dates &amp; Dry Fruits">
+<meta name="twitter:description" content="Carefully selected dates, nuts and dry fruits for sharing and gifting.">
+<meta name="twitter:image" content="https://joudtraders.com/images/hero_gift.jpg">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://joudtraders.com/#organization",
+      "name": "JOUD For Dates & Dry Fruits",
+      "alternateName": "JOUD",
+      "url": "https://joudtraders.com/",
+      "logo": "https://joudtraders.com/images/logo_wordmark.png",
+      "image": "https://joudtraders.com/images/hero_gift.jpg",
+      "description": "JOUD selects premium dates, nuts and dry fruits for everyday sharing, gifting and special occasions.",
+      "sameAs": ["https://wa.me/919894938496"]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://joudtraders.com/#website",
+      "url": "https://joudtraders.com/",
+      "name": "JOUD",
+      "publisher": {"@id": "https://joudtraders.com/#organization"},
+      "inLanguage": "en"
+    }
+  ]
+}
+</script>
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -504,19 +538,50 @@
   }
   /* Homepage-only category treatment: restore the image-led overlay layout. */
   .cat-grid{grid-auto-rows:clamp(150px,20vw,240px)}
-  .cat-card{display:flex;align-items:flex-end;justify-content:initial;height:auto;min-height:0;padding:22px;background:transparent;border:1px solid rgba(217,172,102,.22)}
+  .cat-card{display:flex;align-items:flex-end;justify-content:flex-end;height:auto;min-height:0;padding:22px;background:transparent;border:1px solid rgba(217,172,102,.22)}
   .cat-card:nth-child(1){grid-column:span 2;grid-row:span 2;padding:28px}
   .cat-card .cat-bg{position:absolute;inset:0;width:auto;height:auto;flex:none;background-size:cover;z-index:0}
   .cat-card::before{display:block;content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,rgba(14,11,9,0) 52%,rgba(11,9,7,.6) 74%,rgba(8,6,5,.95) 100%)}
-  .cat-card .cat-label{position:relative;inset:auto;z-index:2;flex:none;min-height:0;padding:0;background:transparent}
+  .cat-card .cat-label{position:relative;inset:auto;z-index:2;flex:none;width:100%;min-height:0;padding:34px 6px 2px;background:transparent}
+  .cat-card[data-name="dates"] .cat-link::before{display:none}
   .cat-card h3{font-size:1.05rem;margin-bottom:6px}
   .cat-card:nth-child(1) .cat-label h3{font-size:1.4rem}
   @media(max-width:700px){
     .cat-grid{grid-auto-rows:auto}
     .cat-card,.cat-card:nth-child(1){height:300px;min-height:0;padding:20px}
     .cat-card:nth-child(1){grid-column:span 1;grid-row:span 1}
-    .cat-card .cat-label{min-height:0;padding:0}
+    .cat-card .cat-label{min-height:0;padding:32px 0 0;background:transparent}
   }
+</style>
+<style>
+  .signature-card{transition:transform .45s cubic-bezier(.22,.61,.36,1),box-shadow .45s ease,border-color .45s ease}
+  .signature-card img{transition:transform .8s cubic-bezier(.22,.61,.36,1),filter .45s ease}
+  .signature-card-content{transition:transform .45s cubic-bezier(.22,.61,.36,1)}
+  .signature-card-content span{display:inline-block;transition:transform .45s ease,color .45s ease}
+  .signature-card-content a{display:inline-flex;transition:color .3s ease,transform .3s ease}
+  .signature-card:hover,.signature-card:focus-within{transform:translateY(-6px);border-color:rgba(196,154,82,.75);box-shadow:0 20px 36px rgba(28,24,20,.22),0 0 22px rgba(196,154,82,.14)}
+  .signature-card:hover img,.signature-card:focus-within img{transform:scale(1.06);filter:saturate(1.06)}
+  .signature-card:hover .signature-card-content,.signature-card:focus-within .signature-card-content{transform:translateY(-4px)}
+  .signature-card:hover .signature-card-content span,.signature-card:focus-within .signature-card-content span{transform:translateY(-2px);color:var(--ivory)}
+  .signature-card:hover .signature-card-content a,.signature-card:focus-within .signature-card-content a{transform:translateX(5px)}
+  .signature-dates.motion-ready .signature-card{opacity:0;transform:translateY(24px)}
+  .signature-dates.motion-ready .signature-card.is-visible{opacity:1;transform:translateY(0);transition-delay:var(--motion-delay,0ms)}
+  .signature-dates.motion-ready .signature-card.is-visible:hover,.signature-dates.motion-ready .signature-card.is-visible:focus-within{transform:translateY(-6px);transition-delay:0ms}
+  @media(prefers-reduced-motion:reduce){.signature-card,.signature-card img,.signature-card-content,.signature-card-content span,.signature-card-content a{transition:none!important}.signature-dates.motion-ready .signature-card{opacity:1;transform:none}}
+</style>
+<style>
+  /* Refined WhatsApp actions: compact header control and softer floating contact button. */
+  .nav-cta{padding:8px 16px;gap:7px;font-size:.72rem;letter-spacing:.1em}
+  .nav-cta svg{width:17px;height:17px}
+  .wa-float{width:52px;height:52px;background:#20c763;border:1px solid rgba(255,255,255,.16);box-shadow:0 8px 22px rgba(0,0,0,.24);animation:waPulseRefined 4.2s ease-in-out infinite}
+  @keyframes waPulseRefined{
+    0%,100%{box-shadow:0 8px 22px rgba(0,0,0,.24),0 0 0 0 rgba(32,199,99,.2)}
+    50%{box-shadow:0 8px 22px rgba(0,0,0,.24),0 0 0 6px rgba(32,199,99,0)}
+  }
+  .wa-float svg{width:26px;height:26px}
+  @media(max-width:400px){.nav-cta{width:40px;height:40px;padding:0;justify-content:center}}
+  @media(max-width:700px){.wa-float{width:52px;height:52px;right:14px;bottom:16px}}
+  @media(prefers-reduced-motion:reduce){.wa-float{animation:none}}
 </style>
 </head>
 <body>
@@ -673,22 +738,22 @@
 
       <a class="cat-card" href="category.html?category=nuts" data-name="nuts">
         <div class="cat-bg" style="background-image:url('images/cat_nuts.jpg');"></div>
-        <div class="cat-label"><h3>Nuts</h3><span class="cat-link">Enquire <span class="arrow">→</span></span></div>
+        <div class="cat-label"><h3>Nuts</h3><span class="cat-link">Explore collection <span class="arrow">→</span></span></div>
       </a>
 
       <a class="cat-card" href="category.html?category=seeds" data-name="seeds">
         <div class="cat-bg" style="background-image:url('images/cat_seeds.jpg');"></div>
-        <div class="cat-label"><h3>Seeds</h3><span class="cat-link">Enquire <span class="arrow">→</span></span></div>
+        <div class="cat-label"><h3>Seeds</h3><span class="cat-link">Explore collection <span class="arrow">→</span></span></div>
       </a>
 
       <a class="cat-card" href="category.html?category=dried-fruits" data-name="dried fruits">
         <div class="cat-bg" style="background-image:url('images/cat_dried_fruits.jpg');"></div>
-        <div class="cat-label"><h3>Dried Fruits</h3><span class="cat-link">Enquire <span class="arrow">→</span></span></div>
+        <div class="cat-label"><h3>Dried Fruits</h3><span class="cat-link">Explore collection <span class="arrow">→</span></span></div>
       </a>
 
-      <a class="cat-card" href="https://wa.me/919894938496?text=Hi%2C%20I%27m%20interested%20in%20Gifting%20from%20JOUD." target="_blank" rel="noopener" data-name="gifting">
+      <a class="cat-card" href="gifting.html" data-name="gifting">
         <div class="cat-bg" style="background-image:url('images/cat_gifting.jpg');"></div>
-        <div class="cat-label"><h3>Gifting</h3><span class="cat-link">Enquire <span class="arrow">→</span></span></div>
+        <div class="cat-label"><h3>Gifting</h3><span class="cat-link">Explore gifting <span class="arrow">→</span></span></div>
       </a>
 
     </div>
@@ -974,6 +1039,20 @@ document.querySelectorAll('a[href^="#"]').forEach(a=>{
     }
   });
 });
+</script>
+<script>
+  (()=>{
+    const section=document.querySelector('.signature-dates');
+    const cards=[...document.querySelectorAll('.signature-card')];
+    if(!section||!cards.length)return;
+    section.classList.add('motion-ready');
+    cards.forEach((card,index)=>card.style.setProperty('--motion-delay',`${index*90}ms`));
+    if(!('IntersectionObserver' in window)){cards.forEach(card=>card.classList.add('is-visible'));return;}
+    const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{
+      if(entry.isIntersecting){entry.target.classList.add('is-visible');observer.unobserve(entry.target);}
+    }),{threshold:.2,rootMargin:'0px 0px -8%'});
+    cards.forEach(card=>observer.observe(card));
+  })();
 </script>
 </body>
 </html>
