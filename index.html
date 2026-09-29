@@ -310,7 +310,7 @@
   .cat-card:nth-child(1){grid-column:span 2;grid-row:span 2;}
   .cat-card:nth-child(8){grid-column:span 2;}
   .cat-card{
-    position:relative;border-radius:4px;overflow:hidden;
+    position:relative;border-radius:16px;overflow:hidden;
     display:flex;align-items:flex-end;padding:22px;
     border:1px solid rgba(217,172,102,0.22);
     box-shadow:0 1px 0 rgba(0,0,0,0.2);
@@ -471,6 +471,16 @@
   .hero{background:var(--tea);}
   ::selection{background:var(--gold-light);color:var(--charcoal);}
   :focus-visible{outline:2px solid var(--gold-light);outline-offset:2px;}
+</style>
+<style>
+  .signature-card{border-radius:16px;overflow:hidden}
+  main section img{border-radius:16px}
+  p{text-align:justify}
+  #about p,.about-copy p{color:var(--charcoal-2);font-weight:400}
+  .cat-card{transition:transform .35s ease,box-shadow .35s ease,border-color .35s ease}
+  .cat-card::after{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;background:radial-gradient(circle at 50% 42%,rgba(196,154,82,.22),transparent 58%);opacity:0;transition:opacity .35s ease}
+  .cat-card:hover,.cat-card:focus-visible{transform:translateY(-6px) scale(1.015);border-color:rgba(196,154,82,.82);box-shadow:0 22px 38px rgba(0,0,0,.3),0 0 24px rgba(196,154,82,.18)}
+  .cat-card:hover::after,.cat-card:focus-visible::after{opacity:1}
 </style>
 </head>
 <body>
