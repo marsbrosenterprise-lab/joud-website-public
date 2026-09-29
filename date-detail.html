@@ -11,10 +11,10 @@
 <meta property="og:title" id="ogTitle" content="Ajwa | JOUD Dates">
 <meta property="og:description" id="ogDescription" content="Discover this JOUD date variety in detail.">
 <meta property="og:url" id="ogUrl" content="https://joudtraders.com/date-detail.html?product=ajwa">
-<meta property="og:type" content="article">
 <meta property="og:site_name" content="JOUD For Dates &amp; Dry Fruits">
-<meta property="og:type" content="article">
-<meta property="og:url" content="https://joudtraders.com/date-detail.html">
+ <script id="breadcrumbSchema" type="application/ld+json">
+ {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://joudtraders.com/"},{"@type":"ListItem","position":2,"name":"Dates","item":"https://joudtraders.com/dates.html"},{"@type":"ListItem","position":3,"name":"Ajwa","item":"https://joudtraders.com/date-detail.html?product=ajwa"}]}
+ </script>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Jost:wght@300;400;500;600&family=Marcellus&display=swap" rel="stylesheet">
 <style>
@@ -58,6 +58,13 @@ document.getElementById('pageCanonical').setAttribute('href', detailCanonical);
 document.getElementById('ogTitle').setAttribute('content', p.title + ' | JOUD Dates');
 document.getElementById('ogDescription').setAttribute('content', detailDescription);
 document.getElementById('ogUrl').setAttribute('content', detailCanonical);
+  document.getElementById('breadcrumbSchema').textContent = JSON.stringify({
+    '@context':'https://schema.org','@type':'BreadcrumbList',itemListElement:[
+      {'@type':'ListItem',position:1,name:'Home',item:'https://joudtraders.com/'},
+      {'@type':'ListItem',position:2,name:'Dates',item:'https://joudtraders.com/dates.html'},
+      {'@type':'ListItem',position:3,name:p.title,item:detailCanonical}
+    ]
+  });
 </script>
 </body>
 <script>
