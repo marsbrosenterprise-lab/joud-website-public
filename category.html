@@ -77,6 +77,11 @@ const collections={
 const key=new URLSearchParams(location.search).get('category')||'nuts';const data=collections[key]||collections.nuts;document.title=data.title+' | JOUD';document.getElementById('pageTitle').textContent=data.title+' | JOUD';document.getElementById('heroTitle').textContent=data.title;document.getElementById('heroCopy').textContent=data.copy;document.getElementById('sectionTitle').textContent='Find your favourite.';document.getElementById('sectionIntro').textContent=data.intro;document.getElementById('heroImage').src='images/'+data.hero;document.getElementById('heroImage').alt=data.title;document.getElementById('closingLink').href='https://wa.me/919894938496?text='+encodeURIComponent('Hi, I am interested in the JOUD '+data.title+'.');document.getElementById('productGrid').innerHTML=data.products.map(([name,type,image,copy])=>'<article class="card"><div class="card-image"><img src="images/'+image+'" alt="'+name+'" loading="lazy" decoding="async"></div><div class="card-body"><div class="type">'+type+'</div><h3>'+name+'</h3><p>'+copy+'</p><a class="enquire" href="https://wa.me/919894938496?text='+encodeURIComponent('Hi, I am interested in '+name+' from the JOUD '+data.title+'.')+'" target="_blank" rel="noopener">Enquire <span>→</span></a></div></article>').join('');document.getElementById('year').textContent=new Date().getFullYear();
 </script>
 <script>
+const categoryHeroImage = document.getElementById('heroImage');
+if (categoryHeroImage) { categoryHeroImage.setAttribute('width','1600'); categoryHeroImage.setAttribute('height','1200'); }
+document.querySelectorAll('#productGrid img').forEach((image) => { image.setAttribute('width','1448'); image.setAttribute('height','1086'); });
+</script>
+<script>
 const categoryCanonical = 'https://joudtraders.com/category.html?category=' + encodeURIComponent(key);
 const categoryDescription = data.copy + ' ' + data.intro;
 const categoryCanonicalLink = document.createElement('link');
