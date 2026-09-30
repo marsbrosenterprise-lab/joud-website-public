@@ -679,7 +679,7 @@
 <style id="joud-brown-palette">:root{--green:#3a2518;--charcoal:#3a2518;--charcoal-2:#4a2e1d;--tea:#211812;--pistachio:#c49a52;--pistachio-deep:#8b572f;--gold:#9a6036;--gold-light:#c49a52;--fg-soft:#6f5740;--muted:#6f5740;--line-light:rgba(58,37,24,.16)}.hero,.section-dark,.categories,.closing{background-color:#3a2518}.card{--lift-color:rgba(196,154,82,.22);--edge-color:#c49a52}.filter:hover,.filter.active{background:#c49a52!important;border-color:#c49a52!important;color:#211812!important}.promise-icon{color:#c49a52!important}</style>
 <link rel="stylesheet" href="shared-nav.css">
 <script src="shared-nav.js" defer></script>
-<link rel="stylesheet" href="motion.css?v=2">
+<link rel="stylesheet" href="motion.css?v=3">
 </head>
 <body>
 
@@ -808,8 +808,8 @@
       <p>JOUD began with a simple idea: dates and dry fruits deserve the same attention as any fine food. Every batch is chosen by hand, checked for quality, and packed the way we'd want to receive it ourselves.</p>
       <p>No shortcuts, no fillers — just natural produce, sourced honestly and brought to your table with the taste and heritage it deserves.</p>
       <div class="sig">
-        <div class="sig-item"><div class="num" data-target="100" data-suffix="%">100%</div><div class="lbl">Natural produce</div></div>
-        <div class="sig-item"><div class="num" data-target="10" data-suffix="+">10+</div><div class="lbl">Varieties sourced</div></div>
+        <div class="sig-item"><div class="num" data-target="100" data-suffix="%">0%</div><div class="lbl">Natural produce</div></div>
+        <div class="sig-item"><div class="num" data-target="10" data-suffix="+">0+</div><div class="lbl">Varieties sourced</div></div>
         <div class="sig-item"><div class="num">A–Z</div><div class="lbl">Hand checked, batch by batch</div></div>
       </div>
     </div>
@@ -1099,6 +1099,7 @@ revealEls.forEach(el=> io.observe(el));
 
 // Count-up stat numbers
 function countUp(el){
+  el.classList.add('jm-stat-count');
   const target = parseInt(el.dataset.target, 10);
   const suffix = el.dataset.suffix || '';
   const initial = parseInt(el.textContent, 10) || 0;
@@ -1152,7 +1153,7 @@ document.querySelectorAll('a[href^="#"]').forEach(a=>{
     cards.forEach(card=>observer.observe(card));
   })();
 </script>
-<script src="motion.js?v=2" defer></script>
+<script src="motion.js?v=3" defer></script>
 </body>
 <script>document.querySelectorAll('.links,.nav-links').forEach(nav=>{if(!nav.querySelector('a[href="index.html#top"],a[href="#top"]')){const a=document.createElement('a');a.href='index.html#top';a.textContent='Home';nav.prepend(a)}});</script>
 </html>
