@@ -317,6 +317,7 @@
 
   /* ---------- ABOUT ---------- */
   .about{background:var(--bg);}
+  .about.section-pad{padding-block:clamp(56px,7vw,88px);}
   .about-grid{display:grid;grid-template-columns:1.05fr 0.95fr;gap:clamp(30px,6vw,80px);align-items:center;}
   .about h2{font-size:clamp(1.9rem,3.6vw,2.7rem);margin-bottom:22px;max-width:14ch;}
   .about p{color:var(--fg-soft);line-height:1.75;font-size:1.02rem;max-width:52ch;margin-bottom:18px;}
@@ -334,7 +335,7 @@
 
   .about-media{position:relative;}
   .about-media img{
-    border-radius:2px;width:100%;object-fit:cover;aspect-ratio:4/3;
+    border-radius:2px;width:100%;height:clamp(360px,54vh,520px);object-fit:cover;object-position:center;aspect-ratio:auto;
     clip-path:inset(0 100% 0 0);transition:clip-path 1.1s cubic-bezier(.65,0,.35,1);
   }
   .about-media.in img{clip-path:inset(0 0 0 0);}
