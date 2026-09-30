@@ -560,7 +560,7 @@
   .cat-grid{grid-auto-rows:clamp(150px,20vw,240px)}
   .cat-card{display:flex;align-items:flex-end;justify-content:flex-end;height:auto;min-height:0;padding:22px;background:transparent;border:1px solid rgba(217,172,102,.22)}
   .cat-card:nth-child(1){grid-column:span 2;grid-row:span 2;padding:28px}
-  .cat-card .cat-bg{position:absolute;inset:0;width:auto;height:auto;flex:none;background-size:cover;z-index:0}
+  .cat-card .cat-bg{position:absolute;inset:0;width:100%;height:100%;flex:none;object-fit:cover;object-position:center;background-size:cover;z-index:0}
   .cat-card::before{display:block;content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,rgba(14,11,9,0) 52%,rgba(11,9,7,.6) 74%,rgba(8,6,5,.95) 100%)}
   .cat-card .cat-label{position:relative;inset:auto;z-index:2;flex:none;width:100%;min-height:0;padding:34px 6px 2px;background:transparent}
   .cat-card[data-name="dates"] .cat-link::before{display:none}
@@ -752,27 +752,27 @@
     <div class="cat-grid reveal" id="catGrid">
 
       <a class="cat-card" href="dates.html" data-name="dates">
-        <div class="cat-bg" style="background-image:url('images/cat_dates.jpg');"></div>
+        <img class="cat-bg" src="images/cat_dates.jpg" width="900" height="1200" alt="JOUD dates collection" loading="lazy" decoding="async">
         <div class="cat-label"><h3>Dates</h3><span class="cat-link">Explore collection <span class="arrow">→</span></span></div>
       </a>
 
       <a class="cat-card" href="category.html?category=nuts" data-name="nuts">
-        <div class="cat-bg" style="background-image:url('images/cat_nuts.jpg');"></div>
+        <img class="cat-bg" src="images/cat_nuts.jpg" width="1600" height="1200" alt="JOUD nuts collection" loading="lazy" decoding="async">
         <div class="cat-label"><h3>Nuts</h3><span class="cat-link">Explore collection <span class="arrow">→</span></span></div>
       </a>
 
       <a class="cat-card" href="category.html?category=seeds" data-name="seeds">
-        <div class="cat-bg" style="background-image:url('images/cat_seeds.jpg');"></div>
+        <img class="cat-bg" src="images/cat_seeds.jpg" width="1600" height="1200" alt="JOUD seeds collection" loading="lazy" decoding="async">
         <div class="cat-label"><h3>Seeds</h3><span class="cat-link">Explore collection <span class="arrow">→</span></span></div>
       </a>
 
       <a class="cat-card" href="category.html?category=dried-fruits" data-name="dried fruits">
-        <div class="cat-bg" style="background-image:url('images/cat_dried_fruits.jpg');"></div>
+        <img class="cat-bg" src="images/cat_dried_fruits.jpg" width="1600" height="1200" alt="JOUD dried fruits collection" loading="lazy" decoding="async">
         <div class="cat-label"><h3>Dried Fruits</h3><span class="cat-link">Explore collection <span class="arrow">→</span></span></div>
       </a>
 
       <a class="cat-card" href="gifting.html" data-name="gifting">
-        <div class="cat-bg" style="background-image:url('images/cat_gifting.jpg');"></div>
+        <img class="cat-bg" src="images/cat_gifting.jpg" width="900" height="900" alt="JOUD gifting collection" loading="lazy" decoding="async">
         <div class="cat-label"><h3>Gifting</h3><span class="cat-link">Explore gifting <span class="arrow">→</span></span></div>
       </a>
 
