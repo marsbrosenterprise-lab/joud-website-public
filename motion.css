@@ -1,8 +1,10 @@
 :root{--jm-gold:#c49a52;--jm-ink:#211812;--jm-ease:cubic-bezier(.22,1,.36,1)}
 .jm-scroll-progress{position:fixed;z-index:1101;top:0;left:0;width:100%;height:2px;pointer-events:none;background:var(--jm-gold);transform:scaleX(0);transform-origin:left center}
 .jm-ripple-host{position:relative;overflow:hidden}
+.hero-arrow.jm-ripple-host{position:absolute}
 .jm-ripple{position:absolute;z-index:3;width:12px;height:12px;border-radius:50%;pointer-events:none;background:rgba(255,239,194,.58);transform:translate(-50%,-50%) scale(0);opacity:0;animation:jm-ripple .55s var(--jm-ease) forwards}
 .jm-shine{position:relative;overflow:hidden}
+.wa-float.jm-shine{position:fixed}
 .jm-shine:after{content:"";position:absolute;inset:0;z-index:2;pointer-events:none;background:linear-gradient(110deg,transparent 34%,rgba(255,239,194,.42) 50%,transparent 66%);transform:translateX(-125%);opacity:0}
 .jm-shine.jm-shine-active:after{animation:jm-shine .9s var(--jm-ease) forwards}
 .jm-focus:focus-visible{outline:2px solid var(--jm-gold);outline-offset:4px}
@@ -32,6 +34,9 @@ html.jm-ready .jm-settle.jm-settled{transform:scale(1);transition:transform .9s 
   .product-image img.jm-pointer-image,.card-image img.jm-pointer-image,.hero-image img.jm-pointer-image,.gift-img img.jm-pointer-image{transition:transform .75s var(--jm-ease)}
   .product:hover img.jm-pointer-image,.card:hover img.jm-pointer-image,.hero-image:hover img.jm-pointer-image,.gift-img:hover img.jm-pointer-image{transform:scale(1.06)}
   .jm-tilt{transform-style:preserve-3d;transition:transform .45s var(--jm-ease)}
+}
+@media (max-width:700px){
+  .hero #heroPrev,.hero #heroNext{display:flex}
 }
 @media (prefers-reduced-motion:reduce){
   .jm-scroll-progress{transform:none!important}.jm-ripple,.jm-shine:after{display:none!important}
