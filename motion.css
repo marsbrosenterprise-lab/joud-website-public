@@ -8,8 +8,8 @@
 .jm-shine:after{content:"";position:absolute;inset:0;z-index:2;pointer-events:none;background:linear-gradient(110deg,transparent 34%,rgba(255,239,194,.42) 50%,transparent 66%);transform:translateX(-125%);opacity:0}
 .jm-shine.jm-shine-active:after{animation:jm-shine .9s var(--jm-ease) forwards}
 .jm-focus:focus-visible{outline:2px solid var(--jm-gold);outline-offset:4px}
-.about-media img{transform:scale(1.025);transition:clip-path 1.1s var(--jm-ease),transform 1.1s var(--jm-ease)}
-.about-media.in img{transform:scale(1)}
+.about-media img{transform:scale(1.025);transition:clip-path 1.35s var(--jm-ease),transform 1.35s var(--jm-ease)}
+.about-media.in img{transform:scale(1);animation:jm-about-image-settle 1.8s var(--jm-ease) both}
 .sig-item .num{transform-origin:left center}
 .sig-item .num.jm-stat-count{animation:jm-stat-pop .7s var(--jm-ease) both}
 .brand,.site-nav-brand{transition:transform .45s var(--jm-ease)}
@@ -32,6 +32,7 @@ html.jm-ready .jm-settle.jm-settled{transform:scale(1);transition:transform .9s 
 @keyframes jm-ripple{to{transform:translate(-50%,-50%) scale(15);opacity:0}}
 @keyframes jm-shine{0%{opacity:0;transform:translateX(-125%)}20%{opacity:1}100%{opacity:0;transform:translateX(125%)}}
 @keyframes jm-stat-pop{0%{opacity:.35;transform:translateY(6px) scale(.92)}65%{opacity:1;transform:translateY(-2px) scale(1.04)}100%{opacity:1;transform:none}}
+@keyframes jm-about-image-settle{0%{opacity:.72;transform:translateY(20px) scale(1.09)}65%{opacity:1;transform:translateY(-3px) scale(1.015)}100%{opacity:1;transform:translateY(0) scale(1)}}
 @media (prefers-reduced-motion:no-preference){
   button:active,.jm-focus:active{transform:scale(.97);transition:transform .12s ease}
   .site-nav.is-open .site-nav-panel-label{animation:jm-menu-label .45s var(--jm-ease) both}
@@ -60,6 +61,6 @@ html.jm-ready .jm-settle.jm-settled{transform:scale(1);transition:transform .9s 
 @media (prefers-reduced-motion:reduce){
   .jm-scroll-progress{transform:none!important}.jm-ripple,.jm-shine:after{display:none!important}
   .brand,.site-nav-brand,.brand img:first-child,.site-nav-brand img:first-child,.brand img.wordmark,.site-nav-brand img:last-child,.nav-cta,.site-nav-whatsapp,.links a,.nav-links a,.site-nav-links a,.nav-cta::after,.site-nav-whatsapp::after,.about-media img{transition:none!important;transform:none!important;filter:none!important}
-  .sig-item .num.jm-stat-count{animation:none!important}
+  .sig-item .num.jm-stat-count{animation:none!important}.about-media.in img{animation:none!important}
   html.jm-ready .jm-reveal,html.jm-ready .jm-reveal.jm-revealed,html.jm-ready .jm-image-fade,html.jm-ready .jm-image-fade.jm-image-loaded,html.jm-ready .jm-settle,html.jm-ready .jm-settle.jm-settled{opacity:1;transform:none;transition:none;animation:none}
 }

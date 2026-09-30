@@ -85,7 +85,7 @@ body{background:#E8D9BD;color:var(--tea)}.collection h2{color:var(--tea)}.collec
   @media(max-width:800px){.promise{grid-template-columns:1fr;padding:28px 20px;gap:12px;margin-top:55px}.promise-item{min-height:58px;font-size:.96rem}}
   @media(prefers-reduced-motion:reduce){.promise-item,.promise-item:hover{transition:none}.js-motion .promise-item,.js-motion .promise.is-visible .promise-item{animation:none;opacity:1;transform:none}}
 </style>
-<link rel="stylesheet" href="motion.css?v=3">
+<link rel="stylesheet" href="motion.css?v=4">
 </head>
 <style>.nav-search-link{display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;color:#f3e9d6}.nav-search-link svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.7}@media(max-width:470px){.nav-search-link{width:40px;height:40px}}</style>
 <style>
@@ -120,4 +120,4 @@ const nav=document.getElementById('nav'),navLinks=document.getElementById('navLi
 document.querySelector('.nav-cta').insertAdjacentHTML('beforebegin','<a class="nav-search-link" href="index.html#products" aria-label="Search categories"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg></a>');document.querySelectorAll('.product').forEach(card=>{card.setAttribute('tabindex','0');card.setAttribute('role','link');const go=()=>{const link=card.querySelector('.view');if(link)window.location.href=link.href};card.addEventListener('click',e=>{if(!e.target.closest('a,button'))go()});card.addEventListener('keydown',e=>{if((e.key==='Enter'||e.key===' ')&&!e.target.closest('a,button')){e.preventDefault();go()}})});
 document.querySelectorAll('.nav-links,.links').forEach(links=>{if(!links.querySelector('a[href="index.html#top"],a[href="#top"]')){const home=document.createElement('a');home.href='index.html#top';home.textContent='Home';links.prepend(home);}});
 document.documentElement.classList.add('js-motion');const promise=document.querySelector('.promise');if(promise&&'IntersectionObserver' in window){const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){promise.classList.add('is-visible');observer.unobserve(promise)}}),{threshold:.2});observer.observe(promise)}else if(promise){promise.classList.add('is-visible')}
-</script><script src="motion.js?v=3" defer></script></body></html>
+</script><script src="motion.js?v=4" defer></script></body></html>
