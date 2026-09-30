@@ -14,6 +14,7 @@
 <link rel="stylesheet" href="shared-nav.css">
 <script src="shared-nav.js" defer></script>
 <style id="nav-seam-fix">.nav{box-shadow:0 1px 0 rgba(28,24,20,.2)}@media(max-width:800px){.hero{margin-top:68px}}</style>
+<link rel="stylesheet" href="motion.css">
 </head>
 <body>
 <nav class="nav"><div class="nav-inner wrap"><a class="brand" href="index.html#top" aria-label="JOUD home"><img src="images/logo_icon.png" alt=""><img class="wordmark" src="images/logo_wordmark.png" alt="JOUD"></a><div class="links"><a href="index.html#top">Home</a><a href="index.html#about">About</a><a href="index.html#products">Products</a><a href="index.html#contact">Contact</a></div><a class="nav-cta" href="https://wa.me/919894938496" target="_blank" rel="noopener">WhatsApp</a></div></nav>
@@ -45,4 +46,5 @@ const products={
 const params=new URLSearchParams(location.search),key=params.get('product')||'almonds',p=products[key]||products.almonds;
 document.title=p.title+' | JOUD';document.getElementById('title').textContent=p.title;document.getElementById('type').textContent=p.type;document.getElementById('heroCopy').textContent=p.hero;document.getElementById('heroImage').src='images/'+p.image;document.getElementById('heroImage').alt=p.title+' from the JOUD '+p.collection;document.getElementById('backLink').href='category.html?category='+p.category;document.getElementById('story').textContent=p.story;document.getElementById('texture').textContent=p.texture;document.getElementById('flavour').textContent=p.flavour;document.getElementById('best').textContent=p.best;document.getElementById('selection').textContent=p.selection;document.getElementById('wellness').textContent=p.wellness;document.getElementById('joudNote').textContent=p.joudNote;document.getElementById('serving').textContent=p.serving;const message=encodeURIComponent('Hi, I am interested in '+p.title+' from the JOUD '+p.collection+'.');document.getElementById('enquire').href='https://wa.me/919894938496?text='+message;document.getElementById('pageDescription').content=p.hero+' '+p.story;
 </script>
+<script src="motion.js" defer></script>
 </body></html>
