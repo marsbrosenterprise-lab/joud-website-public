@@ -20,7 +20,10 @@
 <meta name="twitter:image" id="twitterImage" content="https://joudtraders.com/images/cat_nuts.jpg">
  <script id="breadcrumbSchema" type="application/ld+json">
  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://joudtraders.com/"},{"@type":"ListItem","position":2,"name":"Collections","item":"https://joudtraders.com/index.html#products"},{"@type":"ListItem","position":3,"name":"Nuts Collection","item":"https://joudtraders.com/category.html?category=nuts"}]}
- </script>
+</script>
+<script id="categorySchema" type="application/ld+json">
+{"@context":"https://schema.org","@type":"CollectionPage","name":"Nuts Collection | JOUD","description":"Explore JOUD's selected almonds, cashews, pistachios, and walnuts for sharing, gifting, and everyday enjoyment.","url":"https://joudtraders.com/category.html?category=nuts","image":"https://joudtraders.com/images/cat_nuts.jpg","isPartOf":{"@id":"https://joudtraders.com/#website"}}
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600&family=Marcellus&display=swap" rel="stylesheet">
 <style>
@@ -84,6 +87,12 @@ document.getElementById('ogTitle').setAttribute('content', data.title + ' | JOUD
 document.getElementById('ogDescription').setAttribute('content', categoryDescription);
 document.getElementById('ogUrl').setAttribute('content', categoryCanonical);
   const categoryImage = 'https://joudtraders.com/images/' + data.hero;
+  document.getElementById('categorySchema').textContent = JSON.stringify({
+    '@context':'https://schema.org','@type':'CollectionPage',
+    name:data.title + ' | JOUD',description:categoryDescription,
+    url:categoryCanonical,image:categoryImage,
+    isPartOf:{'@id':'https://joudtraders.com/#website'}
+  });
   document.getElementById('ogImage').setAttribute('content', categoryImage);
   document.getElementById('ogImageAlt').setAttribute('content', data.title + ' from JOUD');
   document.getElementById('twitterTitle').setAttribute('content', data.title + ' | JOUD');
