@@ -54,5 +54,6 @@
   toggle.addEventListener('click',()=>{const open=links.classList.toggle('open');toggle.setAttribute('aria-expanded',open?'true':'false');});
   links.querySelectorAll('a').forEach(link=>link.addEventListener('click',()=>links.classList.remove('open')));
 })();
+document.querySelectorAll('.nav-links,.links').forEach(links=>{if(!links.querySelector('a[href="index.html#top"],a[href="#top"]')){const home=document.createElement('a');home.href='index.html#top';home.textContent='Home';links.prepend(home);}});
 </script>
 </html>
