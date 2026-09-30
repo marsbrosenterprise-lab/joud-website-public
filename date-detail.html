@@ -7,7 +7,6 @@
  <meta name="description" content="Discover Ajwa dates from JOUD — a distinctive variety with a delicate bite and earthy depth for meaningful everyday moments.">
 <meta name="robots" content="index,follow,max-image-preview:large">
 <meta name="author" content="JOUD For Dates &amp; Dry Fruits">
-<link id="pageCanonical" rel="canonical" href="https://joudtraders.com/date-detail.html?product=ajwa">
 <meta property="og:title" id="ogTitle" content="Ajwa | JOUD Dates">
 <meta property="og:description" id="ogDescription" content="Discover this JOUD date variety in detail.">
 <meta property="og:url" id="ogUrl" content="https://joudtraders.com/date-detail.html?product=ajwa">
@@ -62,9 +61,13 @@ const videoWatch=document.getElementById('videoWatch'),videoPoster=document.getE
 <script>
 const detailCanonical = 'https://joudtraders.com/date-detail.html?product=' + encodeURIComponent(key);
 const detailDescription = p.description;
+const detailCanonicalLink = document.createElement('link');
+detailCanonicalLink.id = 'pageCanonical';
+detailCanonicalLink.rel = 'canonical';
+detailCanonicalLink.href = detailCanonical;
+document.head.appendChild(detailCanonicalLink);
 document.querySelector('meta[name="description"]').setAttribute('content', detailDescription);
 document.getElementById('pageDescription').setAttribute('content', detailDescription);
-document.getElementById('pageCanonical').setAttribute('href', detailCanonical);
 document.getElementById('ogTitle').setAttribute('content', p.title + ' | JOUD Dates');
 document.getElementById('ogDescription').setAttribute('content', detailDescription);
 document.getElementById('ogUrl').setAttribute('content', detailCanonical);
