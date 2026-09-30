@@ -76,6 +76,7 @@ document.getElementById('ogUrl').setAttribute('content', detailCanonical);
   });
 </script>
  <script>if(typeof p!=='undefined'){document.getElementById('breadcrumbCurrent').textContent=p.title;}</script>
+ <script>(function(){const requested=new URLSearchParams(location.search).get('product');if(requested&&!Object.prototype.hasOwnProperty.call(products,requested)){document.querySelector('meta[name="robots"]').setAttribute('content','noindex,follow');}})();</script>
  </body>
 <script>
 (()=>{
