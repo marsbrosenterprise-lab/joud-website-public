@@ -11,7 +11,13 @@
 <meta property="og:title" id="ogTitle" content="Ajwa | JOUD Dates">
 <meta property="og:description" id="ogDescription" content="Discover this JOUD date variety in detail.">
 <meta property="og:url" id="ogUrl" content="https://joudtraders.com/date-detail.html?product=ajwa">
+<meta property="og:image" id="ogImage" content="https://joudtraders.com/images/ajwa.jpg">
+<meta property="og:image:alt" id="ogImageAlt" content="Ajwa dates from JOUD">
 <meta property="og:site_name" content="JOUD For Dates &amp; Dry Fruits">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" id="twitterTitle" content="Ajwa | JOUD Dates">
+<meta name="twitter:description" id="twitterDescription" content="Discover Ajwa dates from JOUD.">
+<meta name="twitter:image" id="twitterImage" content="https://joudtraders.com/images/ajwa.jpg">
  <script id="breadcrumbSchema" type="application/ld+json">
  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://joudtraders.com/"},{"@type":"ListItem","position":2,"name":"Dates","item":"https://joudtraders.com/dates.html"},{"@type":"ListItem","position":3,"name":"Ajwa","item":"https://joudtraders.com/date-detail.html?product=ajwa"}]}
  </script>
@@ -62,6 +68,12 @@ document.getElementById('pageCanonical').setAttribute('href', detailCanonical);
 document.getElementById('ogTitle').setAttribute('content', p.title + ' | JOUD Dates');
 document.getElementById('ogDescription').setAttribute('content', detailDescription);
 document.getElementById('ogUrl').setAttribute('content', detailCanonical);
+  const detailImage = 'https://joudtraders.com/images/' + p.image;
+  document.getElementById('ogImage').setAttribute('content', detailImage);
+  document.getElementById('ogImageAlt').setAttribute('content', p.title + ' dates from JOUD');
+  document.getElementById('twitterTitle').setAttribute('content', p.title + ' | JOUD Dates');
+  document.getElementById('twitterDescription').setAttribute('content', detailDescription);
+  document.getElementById('twitterImage').setAttribute('content', detailImage);
   document.getElementById('productSchema').textContent = JSON.stringify({
     '@context':'https://schema.org','@type':'Product',name:p.title+' | JOUD Dates',
     image:['https://joudtraders.com/images/'+p.image],description:p.description,

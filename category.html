@@ -11,7 +11,13 @@
 <meta property="og:title" id="ogTitle" content="Nuts Collection | JOUD">
 <meta property="og:description" id="ogDescription" content="Explore JOUD's carefully selected premium produce.">
 <meta property="og:url" id="ogUrl" content="https://joudtraders.com/category.html?category=nuts">
+<meta property="og:image" id="ogImage" content="https://joudtraders.com/images/cat_nuts.jpg">
+<meta property="og:image:alt" id="ogImageAlt" content="JOUD nuts collection">
 <meta property="og:site_name" content="JOUD For Dates &amp; Dry Fruits">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" id="twitterTitle" content="Nuts Collection | JOUD">
+<meta name="twitter:description" id="twitterDescription" content="Explore JOUD's selected nuts for sharing and gifting.">
+<meta name="twitter:image" id="twitterImage" content="https://joudtraders.com/images/cat_nuts.jpg">
  <script id="breadcrumbSchema" type="application/ld+json">
  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://joudtraders.com/"},{"@type":"ListItem","position":2,"name":"Collections","item":"https://joudtraders.com/index.html#products"},{"@type":"ListItem","position":3,"name":"Nuts Collection","item":"https://joudtraders.com/category.html?category=nuts"}]}
  </script>
@@ -77,6 +83,12 @@ document.getElementById('pageCanonical').setAttribute('href', categoryCanonical)
 document.getElementById('ogTitle').setAttribute('content', data.title + ' | JOUD');
 document.getElementById('ogDescription').setAttribute('content', categoryDescription);
 document.getElementById('ogUrl').setAttribute('content', categoryCanonical);
+  const categoryImage = 'https://joudtraders.com/images/' + data.hero;
+  document.getElementById('ogImage').setAttribute('content', categoryImage);
+  document.getElementById('ogImageAlt').setAttribute('content', data.title + ' from JOUD');
+  document.getElementById('twitterTitle').setAttribute('content', data.title + ' | JOUD');
+  document.getElementById('twitterDescription').setAttribute('content', categoryDescription);
+  document.getElementById('twitterImage').setAttribute('content', categoryImage);
   document.getElementById('breadcrumbSchema').textContent = JSON.stringify({
     '@context':'https://schema.org','@type':'BreadcrumbList',itemListElement:[
       {'@type':'ListItem',position:1,name:'Home',item:'https://joudtraders.com/'},
