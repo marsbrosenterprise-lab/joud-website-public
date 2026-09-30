@@ -12,6 +12,10 @@
 .about-media.in img{transform:scale(1);animation:jm-about-image-settle 1.8s var(--jm-ease) both}
 .sig-item .num{transform-origin:left center}
 .sig-item .num.jm-stat-count{animation:jm-stat-pop .7s var(--jm-ease) both}
+@media (min-width:1081px){
+  .nav-inner,.site-nav-bar{position:relative}
+  .nav-inner>.nav-links,.site-nav-bar>.site-nav-links{position:absolute;left:50%;transform:translateX(-50%);white-space:nowrap}
+}
 .brand,.site-nav-brand{transition:transform .45s var(--jm-ease)}
 .brand img:first-child,.site-nav-brand img:first-child{transform-origin:50% 60%;transition:transform .55s var(--jm-ease),filter .55s var(--jm-ease)}
 .brand img.wordmark,.site-nav-brand img:last-child{transition:transform .45s var(--jm-ease),filter .45s var(--jm-ease)}
