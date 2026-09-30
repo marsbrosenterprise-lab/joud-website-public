@@ -39,7 +39,7 @@ p{text-align:justify}
 .card p{color:rgba(246,239,224,.78)}
 .card .type,.card .enquire{color:#C49A52}
 .card:hover{border-color:rgba(196,154,82,.8);box-shadow:0 24px 46px rgba(20,35,27,.32)}
-.card{position:relative;transition:transform .35s ease,box-shadow .35s ease,border-color .35s ease}
+.card{position:relative;cursor:pointer;transition:transform .35s ease,box-shadow .35s ease,border-color .35s ease}
 .card:hover,.card:focus-visible{transform:translateY(-6px) scale(1.015);border-color:rgba(184,199,160,.9);box-shadow:0 24px 46px rgba(20,35,27,.32),0 0 26px rgba(184,199,160,.24)}
 .card:focus-visible{outline:2px solid #B8C7A0;outline-offset:4px}
 .card::after{content:"";position:absolute;inset:0;z-index:0;pointer-events:none;background:radial-gradient(circle at 50% 25%,var(--lift-color),transparent 66%);opacity:0;transition:opacity .35s ease}
@@ -129,4 +129,50 @@ document.getElementById('ogUrl').setAttribute('content', categoryCanonical);
   links.querySelectorAll('a').forEach(link=>link.addEventListener('click',()=>links.classList.remove('open')));
 })();
 </script>
+<script>
+  (() => {
+    const slugMap = {
+      Almonds: 'almonds',
+      Cashews: 'cashews',
+      Pistachios: 'pistachios',
+      Walnuts: 'walnuts',
+      'Pumpkin Seeds': 'pumpkin-seeds',
+      'Sunflower Seeds': 'sunflower-seeds',
+      'Chia Seeds': 'chia-seeds',
+      'Flax Seeds': 'flax-seeds',
+      'Sesame Seeds': 'sesame-seeds',
+      'Dried Figs': 'dried-figs',
+      'Dried Apricots': 'dried-apricots',
+      Raisins: 'raisins',
+      'Dried Cranberries': 'dried-cranberries',
+      Prunes: 'prunes'
+    };
+
+    document.querySelectorAll('#productGrid .card').forEach(card => {
+      const name = card.querySelector('h3')?.textContent.trim();
+      const slug = slugMap[name];
+      const link = card.querySelector('.enquire');
+      if (!slug || !link) return;
+
+      const category = new URLSearchParams(window.location.search).get('category') || '';
+      link.href = `collection-detail.html?category=${encodeURIComponent(category)}&product=${encodeURIComponent(slug)}`;
+      link.removeAttribute('target');
+      link.removeAttribute('rel');
+      link.innerHTML = 'Explore <span>→</span>';
+      card.setAttribute('role', 'link');
+      card.setAttribute('tabindex', '0');
+      card.setAttribute('aria-label', `Explore ${name}`);
+      card.addEventListener('click', event => {
+        if (event.target.closest('a')) return;
+        window.location.href = link.href;
+      });
+      card.addEventListener('keydown', event => {
+        if (event.key !== 'Enter' && event.key !== ' ') return;
+        event.preventDefault();
+        window.location.href = link.href;
+      });
+    });
+  })();
+</script>
+<script>document.querySelectorAll('.links,.nav-links').forEach(nav=>{if(!nav.querySelector('a[href="index.html#top"]')){const a=document.createElement('a');a.href='index.html#top';a.textContent='Home';nav.prepend(a)}});</script>
 </html>
