@@ -189,7 +189,7 @@
   .nav-mobile-toggle{display:none;background:none;border:none;color:#F3E9D6;padding:4px;}
   .nav-mobile-toggle svg{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:1.6;}
   .nav-backdrop{
-    position:fixed;inset:0;background:rgba(8,6,4,0.55);z-index:105;
+    position:fixed;inset:0;background:rgba(8,6,4,0.55);z-index:99;
     opacity:0;pointer-events:none;transition:opacity .3s ease;
   }
   .nav-backdrop.open{opacity:1;pointer-events:auto;}
@@ -648,6 +648,7 @@
     .nav-links.open a:nth-child(2){transition-delay:.14s}
     .nav-links.open a:nth-child(3){transition-delay:.20s}
     .nav-links.open a:nth-child(4){transition-delay:.26s}
+    .nav-links.open a:nth-child(5){transition-delay:.32s}
     .nav-mobile-toggle[aria-expanded="true"]{
       border:1px solid rgba(216,169,91,.65);background:rgba(216,169,91,.08);
       color:var(--gold-light);transform:rotate(90deg);
@@ -671,6 +672,7 @@
       <span>JOUD</span>
     </a>
     <div class="nav-links" id="navLinks">
+      <a href="#top">Home</a>
       <a href="#about">About</a>
       <a href="#products">Products</a>
       <a href="#why">Why JOUD</a>
