@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Kufi+Arabic:wght@400;500;600&family=Noto+Sans+Arabic:wght@300;400;500&display=swap');
+
 .site-nav{position:fixed;inset:0 0 auto;z-index:1000;background:#211812;color:#f6efe0;border-bottom:1px solid rgba(196,154,82,.24);font-family:Jost,Arial,sans-serif}
 .site-nav-bar{width:min(1180px,calc(100% - 48px));min-height:76px;margin:auto;display:flex;align-items:center;gap:28px}
 .site-nav-brand{display:inline-flex;align-items:center;gap:12px;margin-right:auto;color:#f6efe0}
@@ -32,3 +34,5 @@
   body.nav-open{overflow:hidden}
 }
 @media(prefers-reduced-motion:reduce){.site-nav-panel,.site-nav-backdrop{transition:none}}
+.site-arabic{font-family:"Noto Sans Arabic",Arial,sans-serif;font-weight:400;line-height:1.7}
+h1 .site-arabic,h2 .site-arabic,h3 .site-arabic,.eyebrow .site-arabic,.site-nav-panel-label .site-arabic{font-family:"Noto Kufi Arabic","Noto Sans Arabic",Arial,sans-serif;font-weight:500}

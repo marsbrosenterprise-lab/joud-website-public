@@ -1,4 +1,28 @@
 (() => {
+  const arabicPattern = /[\u0600-\u06ff\u0750-\u077f\u08a0-\u08ff]+/g;
+  const preservedPhrase = 'من خيرات الأرض إلى مائدتكم';
+  const arabicWalker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
+  const arabicNodes = [];
+  while (arabicWalker.nextNode()) arabicNodes.push(arabicWalker.currentNode);
+  arabicNodes.forEach(node => {
+    if (!node.nodeValue || node.nodeValue.includes(preservedPhrase)) return;
+    if (node.parentElement?.closest('script,style,svg')) return;
+    const fragment = document.createDocumentFragment();
+    let last = 0;
+    node.nodeValue.replace(arabicPattern, (match, offset) => {
+      fragment.append(node.nodeValue.slice(last, offset));
+      const span = document.createElement('span');
+      span.className = 'site-arabic';
+      span.lang = 'ar';
+      span.textContent = match;
+      fragment.append(span);
+      last = offset + match.length;
+      return match;
+    });
+    fragment.append(node.nodeValue.slice(last));
+    node.parentNode.replaceChild(fragment, node);
+  });
+
   const whatsapp = 'https://wa.me/919894938496';
   const existing = document.querySelector('.nav, header.nav, #nav');
   if (!existing) return;
