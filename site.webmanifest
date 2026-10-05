@@ -1,0 +1,17 @@
+{
+  "name": "JOUD For Dates & Dry Fruits",
+  "short_name": "JOUD",
+  "description": "Premium dates, nuts and dry fruits from JOUD.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#1C1814",
+  "theme_color": "#1C1814",
+  "icons": [
+    {
+      "src": "/images/logo_icon.png",
+      "sizes": "382x400",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
